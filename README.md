@@ -2,7 +2,7 @@
 
 Google play link: https://play.google.com/store/apps/details?id=com.armageddon.android.flickrdroid&hl=en
 
-Flickr Droid is android APP which uses Flickr API (https://www.flickr.com/services/api/) to get accseess to the huge photo library from Flickr.com
+Flickr Droid is Android APP which uses Flickr API (https://www.flickr.com/services/api/) to get accseess to the huge photo library from Flickr.com.
 Min Android version is 8.0 (API 26). All project ideas, UI/UX and the code i developed by myself, execept these libraries: 
 1. oauth1-signature-builder (https://github.com/giordamauro/oauth1-signature-builder) - creates OAuth-1.0a signatures. 
 2. Glide (https://github.com/bumptech/glide) - fast and efficient open source media management and image loading framework for Android.
