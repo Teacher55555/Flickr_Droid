@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+    <Button
+        android:id="@+id/intro_back_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:background="@drawable/right_eye"
+        android:text="@string/IntroSkip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp"
+        />
+
+
+    <Button
+        android:id="@+id/intro_next_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:foreground="@drawable/arrow_right"
+        android:background="@drawable/left_eye"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/intro_dot_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="@id/intro_next_button"
+        app:layout_constraintBottom_toBottomOf="@id/intro_next_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

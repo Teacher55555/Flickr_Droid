@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1090936331284",
+    "firebase_url": "https://flickr-droid.firebaseio.com",
+    "project_id": "flickr-droid",
+    "storage_bucket": "flickr-droid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090936331284:android:ee439455af2189d5f31b01",
+        "android_client_info": {
+          "package_name": "com.armageddon.android.flickrdroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1090936331284-u3g6h10q824tda5gfkn117bvulob6l9f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFDAIyjzu6QCB4-XxLf6QR5w__s9BP77Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1090936331284-u3g6h10q824tda5gfkn117bvulob6l9f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

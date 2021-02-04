@@ -1,0 +1,27 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=FA:B5:89:95:9D:1C:8C:58:AF:95:DA:4F:DC:C5:11:A5:28:29:39:67%3Bcom.armageddon.android.flickrdroid.ui.activities
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    com.armageddon.android.flickrdroid.ui.activities
+
+    SHA-1 certificate fingerprint:
+    FA:B5:89:95:9D:1C:8C:58:AF:95:DA:4F:DC:C5:11:A5:28:29:39:67
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+<!--    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDM8JkXyIEAfyqiOR1h5k5zguNW6LNbbJI</string>-->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyAkI5WXSGsyTiqSgC_JXzg97bOzWnq43K4</string>
+</resources>
+
+

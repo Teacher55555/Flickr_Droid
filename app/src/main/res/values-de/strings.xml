@@ -1,0 +1,206 @@
+<resources>
+    <string name="app_name">Flickr Droid</string>
+
+    <string name="intro_header1">Hallo!</string>
+    <string name="intro_description1">"Die Anwendung unterstützt zwei Betriebsarten mit und ohne Berechtigung"</string>
+    <string name="intro_header2">Authorization</string>
+    <string name="intro_description2">✓ Zugang zur persönlichen Seite\n✓ Kommentare hinzufügen / löschen\n✓ Favoritenfotos hinzufügen / löschen\n✓ Datenschutzkontrolle für Fotos</string>
+    <string name="intro_header3">Hauptmenü</string>
+    <string name="intro_description3">"Sie können sich jederzeit anmelden, indem Sie das Hauptmenü rechts verschieben"</string>
+    <string name="intro_header4">Flexible Suche</string>
+    <string name="intro_description4">1 - Beste Fotos des vergangenen Tages\n2 - beste Fotos für ein bestimmtes Datum\n3 - kürzlich hinzugefügte Fotos\n4 - Suche Fotos auf der Karte\n5 - Suche nach Fotos nach Kategorie</string>
+    <string name="intro_header5">Suche auf der Karte</string>
+    <string name="intro_description5">Ziehen Sie die Logo-Antenne nach oben, um das Einstellungsfeld herauszuziehen.\nBei Bedarf kann das Foto verschoben werden, indem Sie Ihren Finger darauf halten</string>
+    <string name="intro_header6">Fotos anzeigen</string>
+    <string name="intro_description6">"Ziehen Sie den Auslöser nach oben, um zusätzliche Informationen zum Foto anzuzeigen"</string>
+    <string name="intro_header7">Fotoinformationen</string>
+    <string name="intro_description7">"Klicken Sie auf die Markierung auf der Karte, um den Standort des Fotos in Google Maps anzuzeigen"</string>
+    <string name="intro_header8">Link zu Flickr.com</string>
+    <string name="intro_description8">"Durch Klicken auf ein Profilfoto (Gruppe, Album usw.) wird die aktuelle Seite basierend auf der aktiven Registerkarte auf Flickr.com im Browser geöffnet"</string>
+    <string name="intro_header9">Fotodatenschutz</string>
+    <string name="intro_description9">"Hier können Sie die Privatsphäre Ihrer Fotos ändern, indem Sie auf das entsprechende Symbol klicken."</string>
+    <string name="intro_header10">Danke!</string>
+    <string name="intro_description10">"Wenn Ihnen die App gefällt, unterstützen Sie sie bitte, indem Sie sie bewerten"</string>
+
+    <string name="IntroSkip">SKIP!</string>
+    <string name="introFinish">GO!</string>
+    <string name="sing_in">Anmeldung</string>
+    <string name="sing_in_later">Nicht jetzt</string>
+
+    <string name="search_top">Beste Fotos</string>
+    <string name="search_recent">Neueste Photos</string>
+    <string name="search_on_map_button_text">Suche auf Karte %d Fotos</string>
+    <string name="search_on_map">Suche auf der Karte</string>
+    <string name="search_on_map_near_me">Suche in meiner Nähe</string>
+
+    <string name="data">20\nDEC\n2020</string>
+    <string name="people">Menschen</string>
+    <string name="person">Benutzer</string>
+    <string name="photo">Fotos</string>
+    <string name="groups">Gruppen</string>
+    <string name="date_dialog_title">Beste Fotos für:</string>
+    <string name="search_date_title_result">""</string>
+
+    <string name="pro_flag">PRO</string>
+    <string name="search_photo_hint">Suche</string>
+    <string name="search_user_hint">Benutzername oder e-mail</string>
+    <string name="search_group_hint">Name</string>
+
+    <string name="comment_delete_error">Sie haben keine Berechtigung, diesen Kommentar zu löschen</string>
+    <string name="internet_connection_error">Hoppla! Etwas ist schief gelaufen. Bitte versuchen Sie es später noch einmal.</string>
+    <string name="request_error">Hoppla! Diese Seite kann nicht gefunden werden. Versuchen Sie eine andere Suche.</string>
+    <string name="photos_error">Hoppla! Hier gibt es keine Fotos</string>
+    <string name="user_has_no_photos_error">Dieser Benutzer hat keine öffentlichen Fotos</string>
+    <string name="user_has_no_followings_error">Dieser Benutzer hat keine Abonnenten</string>
+    <string name="user_has_no_albums_error">Dieser Benutzer hat keine Alben</string>
+    <string name="user_has_no_galleries_error">Dieser Benutzer hat keine Galerien</string>
+    <string name="group_has_private_photos_error">Sie sind nicht in dieser Gruppe. Die Gruppe hat private Fotos</string>
+    <string name="user_has_no_groups_error">Dieser Benutzer ist kein Mitglied einer Gruppe</string>
+    <string name="no_comments">Es gibt noch keine Kommentare</string>
+    <string name="data_receive_fail">Datenempfang fehlgeschlagen. Bitte versuchen Sie es später noch einmal</string>
+
+    <string name="internet_connection_error_map">Etwas ist schief gelaufen</string>
+    <string name="request_error_map">Ungültige Anforderung</string>
+
+
+    <string name="public_photos">Öffentliche Fotos</string>
+    <string name="location">Ort</string>
+    <string name="first_posted_photo_date">Erstes Foto gepostet</string>
+
+    <string name="members">Mitglieder</string>
+    <string name="photos">Fotos</string>
+    <string name="topics">Diskussionen</string>
+    <string name="views">Ansichten</string>
+
+    <string name="group_list_private">P\nR\nI\nV\nA\nT\nE</string>
+    <string name="group_list_invite">I\nN\nV\nI\nT\nE</string>
+    <string name="group_list_public">P\nU\nB\nL\nI\nC</string>
+
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+    <string name="GPS_OFF_warning">Ihr GPS scheint deaktiviert zu sein. Möchten Sie es aktivieren?</string>
+    <string name="location_access_deny_warning">Um nach Fotos in der Nähe Ihres Standortes zu suchen, müssen Sie Flickr Droid erlauben, auf den Standort dieses Geräts zuzugreifen</string>
+    <string name="worldwide">Weltweit</string>
+    <string name="near_me">In meiner Nähe</string>
+    <string name="cancel">Stornieren</string>
+    <string name="download_start">Download gestartet…</string>
+
+    <string name="user_public">Öffentlich</string>
+    <string name="user_albums">Alben</string>
+    <string name="user_groups">Gruppen</string>
+    <string name="user_galleries">Galerien</string>
+    <string name="user_favorites">Favorit</string>
+    <string name="user_about">Über</string>
+    <string name="user_camera_roll">Filmrolle</string>
+    <string name="original_link">Ursprünglicher Link:\n</string>
+
+    <string name="photo_privacy_public">Öffentlich</string>
+    <string name="photo_privacy_private">Privat</string>
+    <string name="photo_privacy_friends">Freunde</string>
+    <string name="photo_privacy_family">Familie</string>
+    <string name="photo_privacy_family_friends">Freunde und Familie</string>
+
+    <string name="group_photos">Foto</string>
+    <string name="group_description">Beschreibung</string>
+
+    <string name="download_access_warning">Um Fotos auf das Gerät herunterzuladen, müssen Sie den Zugriff auf den Speicher zulassen.</string>
+    <string name="storage_access_warning">Um ein Foto freizugeben, müssen Sie es zuerst auf Ihr Gerät herunterladen. Dazu ist die Berechtigung zum Zugriff auf den Speicher erforderlich.</string>
+    <string name="slide_show_started">Die Diashow begann mit %d Sek. Intervall. Um zu stoppen, tippen Sie auf den Bildschirm</string>
+    <string name="slide_show_stopped">Diashow gestoppt</string>
+
+    <string name="comments">Kommentare</string>
+    <string name="date">Erstellt</string>
+    <string name="contacts">Kontakte</string>
+
+    <string name="personal_page_followings">Folgen</string>
+    <string name="personal_page_cameraRoll">Filmrolle</string>
+    <string name="personal_page_public">Öffentlich</string>
+    <string name="personal_page_albums">Alben</string>
+    <string name="personal_page_gallery">Galerien</string>
+    <string name="personal_page_groups">Gruppen</string>
+    <string name="personal_page_about">Über</string>
+
+
+    <string name="years_ago">Jahren</string>
+    <string name="years_2_4_ago">Jahren</string>
+    <string name="year_ago">Jahr</string>
+    <string name="months_ago">Monaten</string>
+    <string name="month_ago">Monate</string>
+    <string name="days_ago">Tagen</string>
+    <string name="day_ago">Tag</string>
+    <string name="hours_ago">Stunden</string>
+    <string name="hour_ago">Stunde</string>
+    <string name="minutes_ago">Minuten</string>
+    <string name="minute_ago">Minute</string>
+    <string name="seconds_ago">Sekunden</string>
+    <string name="second_ago">Sekunde</string>
+    <string name="now">jetzt</string>
+    <string name="personal_page">Persönliche Seite</string>
+
+    <string name="photo_not_yet_loaded">Bitte warten Sie, bis das Foto hochgeladen ist</string>
+    <string name="private_message">Die Gruppe ist privat! Zugriff verweigert!</string>
+
+    <string name="group_default_description">Es gibt keine Beschreibung für diese Gruppe</string>
+    <string name="group_default_rules">Es gibt keine Regeln für diese Gruppe. Der Administrator für diese Gruppe hat keine Regeln eingerichtet</string>
+
+
+    <string name="photo_quantity">Menge:</string>
+    <string name="loading">Wird geladen…</string>
+    <string name="max_photo_on_the_map">Max: %d</string>
+    <string name="max">Max:</string>
+    <string name="keywords">Schlüsselwörter:</string>
+    <string name="title_activity_maps">Karte</string>
+    <string name="map_search_hint">Zeigt standardmäßig die besten Fotos an</string>
+    <string name="camera_title_lens">Linse</string>
+    <string name="camera_title_aperture">Aperture</string>
+    <string name="camera_title_focal_length">Brennweite</string>
+    <string name="camera_exposure_title">Exposition</string>
+    <string name="camera_title_iso">ISO</string>
+    <string name="comment_hint">Schreibe einen Kommentar…</string>
+    <string name="gallery_view">Typ der Galerieansicht</string>
+    <string name="picture_show_quality">Bildshowqualität</string>
+    <string name="quality_640_small">640\nKlein</string>
+    <string name="quality_800_small">800\nKlein</string>
+    <string name="quality_1024_medium">1024\nMittel</string>
+    <string name="quality_2048_large">2048\ngroß</string>
+    <string name="download_picture_quality">Die Qualität der heruntergeladenen Bilder</string>
+    <string name="max_quality">Max\n Qualität</string>
+    <string name="slide_show_duration">Dauer der Diashow</string>
+    <string name="slideshow_3_sec">3 sek</string>
+    <string name="slideshow_4_sec">4 sek</string>
+    <string name="slideshow_5_sec">5 sek</string>
+    <string name="slideshow_10_sec">10 sek</string>
+    <string name="slideshow_15_sec">15 sek</string>
+    <string name="slideshow_20_sec">20 sek</string>
+    <string name="theme">Thema</string>
+    <string name="default_theme">Standard</string>
+    <string name="light">Licht</string>
+    <string name="dark">Dunkel</string>
+    <string name="about">Über App</string>
+    <string name="refresh">Aktualisierung</string>
+    <string name="title_activity_oauth">OauthActivity</string>
+    <string name="redirect_to_flickr_message">https://www.flickr.com</string>
+    <string name="redirect_to_app_message">Flickr Droid</string>
+    <string name="oauth_title">Weiterleiten an:</string>
+    <string name="please_wait">Warten Sie mal…</string>
+    <string name="back_to_app">Zurück zur App</string>
+    <string name="search_photos">Fotos suchen</string>
+    <string name="show_intro">Intro anzeigen</string>
+    <string name="rate_the_app">Bewertungs App</string>
+    <string name="settings">Einstellungen</string>
+
+    <string name="own_photo_fave_warning">Sie können Ihr eigenes Foto nicht zum Favoriten hinzufügen</string>
+    <string name="not_singed_up_warning">Sie müssen angemeldet sein</string>
+    <string name="_1">1</string>
+    <string name="quantity_of_photos_on_the_map">Anzahl der Fotos auf der Karte:</string>
+    <string name="calculating_message">Berechnen…</string>
+    <string name="error">error</string>
+    <string name="cache_size_tap_to_clear">Cache-Größe (löschen)</string>
+    <string name="reset">Zurücksetzen</string>
+    <string name="app_version">App Version: %s</string>
+    <string name="menu">menu</string>
+    <string name="calendar">calendar</string>
+    <string name="search">Search</string>
+
+
+</resources>

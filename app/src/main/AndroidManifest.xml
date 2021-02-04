@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.armageddon.android.flickrdroid" >
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".api.OauthActivity"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="callback"
+                    android:scheme="appforflickr" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activities.SearchActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name=".ui.activities.PhotoFullActivity" />
+        <activity android:name=".ui.activities.CommentsActivity" />
+        <activity
+            android:name=".ui.activities.AboutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.UserPersonalPageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.UserItemDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.UserContactsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.SingInActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.IntroActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.LogoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.SettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Splash" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAkI5WXSGsyTiqSgC_JXzg97bOzWnq43K4" />
+    </application>
+
+</manifest>

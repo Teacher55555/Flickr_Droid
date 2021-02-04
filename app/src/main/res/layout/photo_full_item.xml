@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/photo_detail_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/user_icon_layout"
+            android:layout_width="60dp"
+            android:layout_height="60dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/user_icon_image_container"
+                android:layout_gravity="center"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="30dp"
+                android:innerRadius="0dp"
+                android:shape="ring"
+                >
+
+                <ImageView
+                    android:id="@+id/user_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:background="?attr/colorPrimary"
+                    tools:src="@drawable/cat" />
+            </androidx.cardview.widget.CardView>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorGreyLight"
+            android:textSize="16sp"
+            android:layout_toEndOf="@id/user_icon_layout"
+            android:layout_toStartOf="@id/icon_close"
+            tools:text="Donald Trump"
+            />
+
+            <ImageView
+                android:layout_alignParentEnd="true"
+                android:id="@+id/icon_close"
+                android:layout_gravity="end"
+                android:src="@drawable/ic_baseline_close_24"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                app:tint="@color/colorGreyLight" />
+
+        <View
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/user_icon_layout"
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:background="?attr/subtitleTextColor"/>
+    </RelativeLayout>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_fav_stroke"
+        android:background="@null"/>
+
+    <ProgressBar
+
+        android:id="@+id/progress_bar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:indeterminate="true"
+        android:visibility="visible"
+        android:layout_gravity="center"
+        />
+
+    <ImageView
+        android:id="@+id/broken_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_outline_broken_image_24"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        />
+
+</FrameLayout>

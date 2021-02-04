@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="?attr/colorPrimary">
+
+
+    <TextView
+        android:id="@+id/text_title_1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="?attr/titleTextColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="@string/oauth_title"/>
+
+    <TextView
+        android:id="@+id/redirect_message"
+        android:layout_marginTop="4dp"
+        android:textSize="20sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="?attr/titleTextColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/redirect_to_flickr_message"/>
+
+    <TextView
+        android:id="@+id/text_title_2"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="?attr/titleTextColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/please_wait"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/back_button"
+        android:visibility="gone"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/back_to_app"
+        android:textAllCaps="false"
+        android:layout_margin="20dp"
+        android:layout_gravity="center"
+        android:textColor="?attr/tabTextColor"
+        android:src="@drawable/icon_refresh"
+        android:layout_width="wrap_content"
+        android:background="@drawable/refresh_button_background"
+        android:layout_height="40dp"/>
+
+
+
+</LinearLayout>

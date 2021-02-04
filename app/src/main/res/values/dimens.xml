@@ -1,0 +1,6 @@
+<resources>
+    <!-- Поля по умолчанию согласно стилевым рекомендациям Android. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="map_inset_margin">100dp</dimen>
+</resources>

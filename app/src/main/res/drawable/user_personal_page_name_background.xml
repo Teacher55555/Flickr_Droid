@@ -1,0 +1,6 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient android:type="radial" android:gradientRadius="100dp"
+        android:startColor="?attr/colorPrimary" android:endColor="@color/colorTransparent" />
+</shape>
+    <!-- create the stroke for top, left, bottom and right with the dp you want -->
