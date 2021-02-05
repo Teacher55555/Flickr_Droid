@@ -242,24 +242,26 @@ public class PhotoFullFragment extends Fragment implements Converter {
       ImageButton slideShowButton = view.findViewById(R.id.slideshow_button);
 
       mFavsQuantity.setOnClickListener(v -> {
-          String appUserOwner = QueryPreferences.getUserId(requireActivity());
-          if (appUserOwner != null && !appUserOwner.equals(mItem.getOwner())) {
-              mSlidePanelProgress.setVisibility(View.VISIBLE);
-                if (mItem.isfavorite()) {
-                    new RemoveFavoriteTask(mItem.getId()).execute();
-                } else {
-                    new AddFavoriteTask(mItem.getId()).execute();
-                }
-          } else if (appUserOwner != null) {
-              Toast.makeText(getActivity(),
-                      getString(R.string.own_photo_fave_warning),
-                      Toast.LENGTH_SHORT)
-                      .show();
-          } else {
-              Toast.makeText(getActivity(),
-                      getString(R.string.not_singed_up_warning),
-                      Toast.LENGTH_SHORT)
-                      .show();
+          if (isAdded()) {
+              String appUserOwner = QueryPreferences.getUserId(requireActivity());
+              if (appUserOwner != null && !appUserOwner.equals(mItem.getOwner())) {
+                  mSlidePanelProgress.setVisibility(View.VISIBLE);
+                  if (mItem.isfavorite()) {
+                      new RemoveFavoriteTask(mItem.getId()).execute();
+                  } else {
+                      new AddFavoriteTask(mItem.getId()).execute();
+                  }
+              } else if (appUserOwner != null) {
+                  Toast.makeText(getActivity(),
+                          getString(R.string.own_photo_fave_warning),
+                          Toast.LENGTH_SHORT)
+                          .show();
+              } else {
+                  Toast.makeText(getActivity(),
+                          getString(R.string.not_singed_up_warning),
+                          Toast.LENGTH_SHORT)
+                          .show();
+              }
           }
       });
 
@@ -831,25 +833,27 @@ public class PhotoFullFragment extends Fragment implements Converter {
 
         @Override
         protected RequestResponse<?> doInBackground(String... strings) {
-            return new FlickrFetchr().addFavs(getActivity(), photoID);
+            return new FlickrFetchr().addFavs(getContext(), photoID);
         }
 
         @Override
         protected void onPostExecute(RequestResponse<?> response) {
-            if (response.getConnectionStat() == RequestResponse.CONNECTION_OK
-                    && response.getResponseDataStat().equals(RequestResponse.RESPONSE_DATA_OK)) {
-                mItem.setFavorite(true);
-                mItem.increaseFavesCount();
-                mFavsQuantity.setText(mItem.getCount_faves());
-                mFavsQuantity.setCompoundDrawablesWithIntrinsicBounds(
-                        R.drawable.icon_star_filled, 0, 0, 0);
-            } else {
-                Toast.makeText(requireActivity(),
-                        getString(R.string.internet_connection_error),
-                        Toast.LENGTH_SHORT)
-                        .show();
+            if (isAdded()) {
+                if (response.getConnectionStat() == RequestResponse.CONNECTION_OK
+                        && response.getResponseDataStat().equals(RequestResponse.RESPONSE_DATA_OK)) {
+                    mItem.setFavorite(true);
+                    mItem.increaseFavesCount();
+                    mFavsQuantity.setText(mItem.getCount_faves());
+                    mFavsQuantity.setCompoundDrawablesWithIntrinsicBounds(
+                            R.drawable.icon_star_filled, 0, 0, 0);
+                } else {
+                    Toast.makeText(requireActivity(),
+                            getString(R.string.internet_connection_error),
+                            Toast.LENGTH_SHORT)
+                            .show();
+                }
+                mSlidePanelProgress.setVisibility(View.INVISIBLE);
             }
-            mSlidePanelProgress.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -865,25 +869,27 @@ public class PhotoFullFragment extends Fragment implements Converter {
 
         @Override
         protected RequestResponse<?> doInBackground(String... strings) {
-            return new FlickrFetchr().removeFavs(requireActivity(), photoID);
+            return new FlickrFetchr().removeFavs(getContext(), photoID);
         }
 
         @Override
         protected void onPostExecute(RequestResponse<?> response) {
-            if (response.getConnectionStat() == RequestResponse.CONNECTION_OK
-                    && response.getResponseDataStat().equals(RequestResponse.RESPONSE_DATA_OK)) {
-                mItem.setFavorite(false);
-                mItem.decreaseFavesCount();
-                mFavsQuantity.setText(mItem.getCount_faves());
-                mFavsQuantity.setCompoundDrawablesWithIntrinsicBounds(
-                        R.drawable.icon_star_stroke, 0, 0, 0);
-            } else {
-                Toast.makeText(requireActivity(),
-                        getString(R.string.internet_connection_error),
-                        Toast.LENGTH_SHORT)
-                        .show();
+            if (isAdded()) {
+                if (response.getConnectionStat() == RequestResponse.CONNECTION_OK
+                        && response.getResponseDataStat().equals(RequestResponse.RESPONSE_DATA_OK)) {
+                    mItem.setFavorite(false);
+                    mItem.decreaseFavesCount();
+                    mFavsQuantity.setText(mItem.getCount_faves());
+                    mFavsQuantity.setCompoundDrawablesWithIntrinsicBounds(
+                            R.drawable.icon_star_stroke, 0, 0, 0);
+                } else {
+                    Toast.makeText(requireActivity(),
+                            getString(R.string.internet_connection_error),
+                            Toast.LENGTH_SHORT)
+                            .show();
+                }
+                mSlidePanelProgress.setVisibility(View.INVISIBLE);
             }
-            mSlidePanelProgress.setVisibility(View.INVISIBLE);
         }
     }
 

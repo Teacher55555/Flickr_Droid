@@ -146,14 +146,13 @@ public class PhotoFullActivity extends AppCompatActivity implements PhotoFullFra
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo_full);
 
-
-        if (mResponse == null) {
+//        if (mResponse == null) {
            mResponse = GalleryItemBase.getResponse(this);
            mItems = mResponse.getItems();
            mQueryType = mResponse.getQueryType();
            mQuery = mResponse.getQuery();
            mCategory = mResponse.getCategory();
-        }
+//        }
 
         if (savedInstanceState != null) {
             isPhotoInfoVisible = savedInstanceState.getBoolean(PHOTO_INFO_SHOW);
