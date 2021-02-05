@@ -134,7 +134,6 @@ public class GalleryShowFragment extends Fragment
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         galleryViewColumns = QueryPreferences.getGalleryViewColumns(getActivity());
         assert getArguments() != null;
         mCategory = getArguments().getString(CATEGORY);
@@ -260,18 +259,18 @@ public class GalleryShowFragment extends Fragment
 
         @Override
         protected void onPostExecute(RequestResponse<GalleryItem> response) {
-            mResponse = response;
-            if (mResponse.getConnectionStat() == RequestResponse.CONNECTION_OK
-                    && mResponse.getResponseDataStat().equals(RequestResponse.RESPONSE_DATA_OK)) {
-                mGalleryItemList.addAll(response.getItems());
-                setupAdapter();
-            } else {
-                mMarginTopView.setVisibility(View.VISIBLE);
-                mCallBacks.setProgressBar(false);
-                mSwipeRefreshLayout.setRefreshing(false);
-                mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-                mRecyclerView.setAdapter(new ErrorAdapter(response, GalleryShowFragment.this));
-            }
+                mResponse = response;
+                if (mResponse.getConnectionStat() == RequestResponse.CONNECTION_OK
+                        && mResponse.getResponseDataStat().equals(RequestResponse.RESPONSE_DATA_OK)) {
+                    mGalleryItemList.addAll(response.getItems());
+                    setupAdapter();
+                } else {
+                    mMarginTopView.setVisibility(View.VISIBLE);
+                    mCallBacks.setProgressBar(false);
+                    mSwipeRefreshLayout.setRefreshing(false);
+                    mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+                    mRecyclerView.setAdapter(new ErrorAdapter(response, GalleryShowFragment.this));
+                }
         }
     }
 
