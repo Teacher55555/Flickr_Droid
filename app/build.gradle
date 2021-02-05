@@ -9,7 +9,7 @@ android {
         applicationId "com.armageddon.android.flickrdroid"
         minSdkVersion 26   // 26
         targetSdkVersion 30
-        versionCode 14
+        versionCode 15
         versionName "1.0.9"
         testInstrumentationRunner "androidx.settings_default_background.runner.AndroidJUnitRunner"
     }
