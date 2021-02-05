@@ -10,7 +10,7 @@ android {
         minSdkVersion 26   // 26
         targetSdkVersion 30
         versionCode 14
-        versionName "1.0.8"
+        versionName "1.0.9"
         testInstrumentationRunner "androidx.settings_default_background.runner.AndroidJUnitRunner"
     }
 
