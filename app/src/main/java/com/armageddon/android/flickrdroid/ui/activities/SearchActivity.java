@@ -2,6 +2,7 @@ package com.armageddon.android.flickrdroid.ui.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import com.armageddon.android.flickrdroid.R;
 import com.armageddon.android.flickrdroid.common.ActivityUtils;
 import com.armageddon.android.flickrdroid.common.Converter;
 import com.armageddon.android.flickrdroid.common.EnumCategory;
+import com.armageddon.android.flickrdroid.common.QueryPreferences;
 import com.armageddon.android.flickrdroid.ui.adapters.CategoryItemAdapter;
 import com.armageddon.android.flickrdroid.ui.adapters.SearchGalleryTabsAdapter;
 import com.armageddon.android.flickrdroid.ui.adapters.SearchTabsAdapter;
@@ -34,6 +36,7 @@ import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
@@ -110,6 +113,15 @@ public class SearchActivity extends SlideMenuActivity implements DaterPickerFrag
         ActivityUtils.onActivityCreateSetTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+        if (!QueryPreferences.isWelcomeMessageShown(this)) {
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage(getString(R.string.intro_version_1_10))
+                    .setPositiveButton("Ok", (dialog, id) -> dialog.cancel());
+            final AlertDialog alert = builder.create();
+            alert.show();
+            QueryPreferences.setWelcomeMessageIsShown(this);
+        }
 
         mCategoryRecyclerView = findViewById(R.id.category_recycle_view);
         mAppBarLayout = findViewById(R.id.appBar_layout);

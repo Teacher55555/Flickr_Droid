@@ -1,5 +1,6 @@
 package com.armageddon.android.flickrdroid.ui.activities;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.armageddon.android.flickrdroid.R;
 import com.armageddon.android.flickrdroid.common.ActivityUtils;
@@ -263,9 +265,16 @@ public class UserItemDetailActivity extends SlideMenuActivity
     }
 
     private void openLinkInWebBrowser(String url) {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setDataAndType(Uri.parse(url),"text/html");
-        startActivity(intent);
+        try {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setDataAndType(Uri.parse(url),"text/html");
+            startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+            e.printStackTrace();
+            Toast.makeText(this, R.string.internet_connection_error, Toast.LENGTH_SHORT)
+                    .show();
+        }
+
     }
 
 

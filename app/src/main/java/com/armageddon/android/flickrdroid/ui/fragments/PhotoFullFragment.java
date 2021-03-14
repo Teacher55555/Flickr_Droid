@@ -246,10 +246,19 @@ public class PhotoFullFragment extends Fragment implements Converter {
               String appUserOwner = QueryPreferences.getUserId(requireActivity());
               if (appUserOwner != null && !appUserOwner.equals(mItem.getOwner())) {
                   mSlidePanelProgress.setVisibility(View.VISIBLE);
-                  if (mItem.isfavorite()) {
-                      new RemoveFavoriteTask(mItem.getId()).execute();
+                  Context context = getContext();
+                  if (context != null) {
+                      if (mItem.isfavorite()) {
+                          new RemoveFavoriteTask(mItem.getId(), context).execute();
+                      } else {
+                          new AddFavoriteTask(mItem.getId(), context).execute();
+                      }
                   } else {
-                      new AddFavoriteTask(mItem.getId()).execute();
+                      Toast.makeText(getActivity(),
+                              getString(R.string.internet_connection_error),
+                              Toast.LENGTH_SHORT)
+                              .show();
+                      mSlidePanelProgress.setVisibility(View.INVISIBLE);
                   }
               } else if (appUserOwner != null) {
                   Toast.makeText(getActivity(),
@@ -375,28 +384,31 @@ public class PhotoFullFragment extends Fragment implements Converter {
             public boolean onSingleTapConfirmed(MotionEvent e) {
                 Animation animationUpPanel;
                 Animation animationDownPanel;
-                if (mPhotoInfoVisible) {
-                     animationUpPanel = AnimationUtils.loadAnimation(getActivity(),
-                            R.anim.photo_up_panel_hide);
-                     animationDownPanel = AnimationUtils.loadAnimation(getActivity(),
-                            R.anim.photo_down_panel_hide);
-                    mSlidePanel.setTouchEnabled(false);
-                    mCurtain.setVisibility(View.GONE);
-                    mPhotoInfoVisible = false;
+                Context context = getContext();
+                if (context != null) {
+                    if (mPhotoInfoVisible) {
+                        animationUpPanel = AnimationUtils.loadAnimation(context,
+                                R.anim.photo_up_panel_hide);
+                        animationDownPanel = AnimationUtils.loadAnimation(context,
+                                R.anim.photo_down_panel_hide);
+                        mSlidePanel.setTouchEnabled(false);
+                        mCurtain.setVisibility(View.GONE);
+                        mPhotoInfoVisible = false;
 
-                } else {
-                     animationUpPanel = AnimationUtils.loadAnimation(getActivity(),
-                            R.anim.photo_up_panel_show);
+                    } else {
+                        animationUpPanel = AnimationUtils.loadAnimation(getActivity(),
+                                R.anim.photo_up_panel_show);
                      animationDownPanel = AnimationUtils.loadAnimation(getActivity(),
                             R.anim.photo_down_panle_show);
-                    mSlidePanel.setTouchEnabled(true);
-                    mCurtain.setVisibility(View.VISIBLE);
-                    mPhotoInfoVisible = true;
-                }
+                        mSlidePanel.setTouchEnabled(true);
+                        mCurtain.setVisibility(View.VISIBLE);
+                        mPhotoInfoVisible = true;
+                    }
                 mUpPanel.startAnimation(animationUpPanel);
                 mDownPanel.startAnimation(animationDownPanel);
                 mBottomShadow.startAnimation(animationDownPanel);
                 mCallBacks.setInfoVisibilityState(mPhotoInfoVisible);
+                }
                 return false;
             }
             boolean isMaximum = false;
@@ -826,19 +838,21 @@ public class PhotoFullFragment extends Fragment implements Converter {
     private class AddFavoriteTask extends AsyncTask<String, Void, RequestResponse<?>> {
 
         private String photoID;
+        private Context context;
 
-        public AddFavoriteTask(String photoID) {
+        public AddFavoriteTask(String photoID, Context context) {
             this.photoID = photoID;
+            this.context = context;
         }
 
         @Override
         protected RequestResponse<?> doInBackground(String... strings) {
-            return new FlickrFetchr().addFavs(getContext(), photoID);
+            return new FlickrFetchr().addFavs(context, photoID);
         }
 
         @Override
         protected void onPostExecute(RequestResponse<?> response) {
-            if (isAdded()) {
+//            if (isAdded()) {
                 if (response.getConnectionStat() == RequestResponse.CONNECTION_OK
                         && response.getResponseDataStat().equals(RequestResponse.RESPONSE_DATA_OK)) {
                     mItem.setFavorite(true);
@@ -854,7 +868,7 @@ public class PhotoFullFragment extends Fragment implements Converter {
                 }
                 mSlidePanelProgress.setVisibility(View.INVISIBLE);
             }
-        }
+//        }
     }
 
     /** sends POST request to Flickr.com to remove photo from user's favorites */
@@ -862,19 +876,22 @@ public class PhotoFullFragment extends Fragment implements Converter {
     private class RemoveFavoriteTask extends AsyncTask<String, Void, RequestResponse<?>> {
 
         private String photoID;
+        private Context context;
 
-        public RemoveFavoriteTask(String photoID) {
+        public RemoveFavoriteTask(String photoID, Context context) {
             this.photoID = photoID;
+            this.context = context;
         }
 
         @Override
         protected RequestResponse<?> doInBackground(String... strings) {
-            return new FlickrFetchr().removeFavs(getContext(), photoID);
+
+            return new FlickrFetchr().removeFavs(context, photoID);
         }
 
         @Override
         protected void onPostExecute(RequestResponse<?> response) {
-            if (isAdded()) {
+//            if (isAdded()) {
                 if (response.getConnectionStat() == RequestResponse.CONNECTION_OK
                         && response.getResponseDataStat().equals(RequestResponse.RESPONSE_DATA_OK)) {
                     mItem.setFavorite(false);
@@ -890,7 +907,7 @@ public class PhotoFullFragment extends Fragment implements Converter {
                 }
                 mSlidePanelProgress.setVisibility(View.INVISIBLE);
             }
-        }
+//        }
     }
 
     private boolean hasStoragePermissions () {
@@ -906,31 +923,37 @@ public class PhotoFullFragment extends Fragment implements Converter {
     /** downloads image to user's device */
 
     private void downloadImage () {
-        String photoUrl = mItem.getPhotoUrl(QueryPreferences.getPhotoDownloadQuality(requireContext()));
-        if (photoUrl == null) {
-            photoUrl = mItem.getPhotoHighestResUrl();
-        }
-        Toast.makeText(getActivity(),getString(R.string.download_start),Toast.LENGTH_SHORT)
-                .show();
-        DownloadManager dm = (DownloadManager) requireActivity().getSystemService(DOWNLOAD_SERVICE);
-        DownloadManager.Request r = new DownloadManager.Request(Uri.parse(photoUrl));
-        String fileName = mItem.getName();
-        if (fileName.length() > 0) {
-            fileName = fileName.replaceAll("\\W", " ");
-            fileName = fileName.trim() + FILE_TYPE_TEMPLATE;
-        } else {
-            fileName = FILE_NAME_TEMPLATE + FILE_TYPE_TEMPLATE;
-        }
-        // This put the download in the same Download dir the browser uses
-        r.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, fileName);
+        try {
+            String photoUrl = mItem.getPhotoUrl(QueryPreferences.getPhotoDownloadQuality(requireContext()));
+            if (photoUrl == null) {
+                photoUrl = mItem.getPhotoHighestResUrl();
+            }
+            Toast.makeText(getActivity(), getString(R.string.download_start), Toast.LENGTH_SHORT)
+                    .show();
+            DownloadManager dm = (DownloadManager) requireActivity().getSystemService(DOWNLOAD_SERVICE);
+            DownloadManager.Request r = new DownloadManager.Request(Uri.parse(photoUrl));
+            String fileName = mItem.getName();
+            if (fileName.length() > 0) {
+                fileName = fileName.replaceAll("\\W", " ");
+                fileName = fileName.trim() + FILE_TYPE_TEMPLATE;
+            } else {
+                fileName = FILE_NAME_TEMPLATE + FILE_TYPE_TEMPLATE;
+            }
+            // This put the download in the same Download dir the browser uses
+            r.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, fileName);
 
-        // When downloading music and videos they will be listed in the player
-        r.allowScanningByMediaScanner();
+            // When downloading music and videos they will be listed in the player
+            r.allowScanningByMediaScanner();
 
-        // Notify user when download is completed
-        r.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-        assert dm != null;
-        dm.enqueue(r);
+            // Notify user when download is completed
+            r.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+            assert dm != null;
+            dm.enqueue(r);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            Toast.makeText(getActivity(), R.string.internet_connection_error, Toast.LENGTH_SHORT)
+                    .show();
+        }
     }
 
     /** first downloads image to user's device and then shares with name and original link */
@@ -1000,7 +1023,13 @@ public class PhotoFullFragment extends Fragment implements Converter {
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
-}
+
+    }
+
+
+
+
+
 
 
 

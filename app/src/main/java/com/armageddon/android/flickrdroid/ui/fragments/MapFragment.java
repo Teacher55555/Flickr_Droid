@@ -536,10 +536,13 @@ public class MapFragment extends Fragment implements CategoryItemAdapter.CallBac
 
         // Starts PhotoFullActivity with photoId from snippet.
         mMap.setOnMarkerClickListener(marker -> {
-            UUID markerId = UUID.fromString(marker.getSnippet());
-            GalleryItemBase.setResponse(getActivity(), mResponse);
-            Intent intent = PhotoFullActivity.newIntent(getActivity(), markerId, null);
-            startActivity(intent);
+            if (marker.getSnippet().contains("-")) {
+                UUID markerId = UUID.fromString(marker.getSnippet());
+                GalleryItemBase.getInstance().setResponse(getActivity(), mResponse);
+//            GalleryItemBase.setResponse(getActivity(), mResponse);
+                Intent intent = PhotoFullActivity.newIntent(getActivity(), markerId, null);
+                startActivity(intent);
+            }
             return true;
         });
         setSlidingUpPanelState(false);

@@ -89,12 +89,16 @@ public class GalleryShowFragment extends Fragment
         mResponse.setCategory(mCategory);
         mResponse.setQuery(mQuery);
         mResponse.setQueryType(mQueryType);
-        GalleryItemBase.setResponse(getActivity(),mResponse);
+
+        GalleryItemBase.getInstance().setResponse(getActivity(), mResponse);
+//        GalleryItemBase.setResponse(getActivity(),mResponse);
         Intent intent = PhotoFullActivity.newIntent(
                     getActivity(),
                     itemId,
                     null);
         startActivityForResult(intent, REQUEST_CODE_POSITION);
+
+        GalleryItemBase.getInstance().setResponse(getActivity(), mResponse);
     }
 
     /**
@@ -110,7 +114,8 @@ public class GalleryShowFragment extends Fragment
 
         if (requestCode == REQUEST_CODE_POSITION && data != null) {
             UUID currentItemId = (UUID) PhotoFullActivity.getGalleryItemPosition(data);
-            mResponse = GalleryItemBase.getResponse(getActivity());
+            mResponse = GalleryItemBase.getInstance().getResponse(getActivity());
+//            mResponse = GalleryItemBase.getResponse(getActivity());
             mGalleryItemList = mResponse.getItems();
             mAdapter = null;
             setupAdapter();

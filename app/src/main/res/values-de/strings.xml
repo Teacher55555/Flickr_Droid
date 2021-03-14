@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Flickr Droid</string>
-
+    <string name="intro_version_1_10">Hallo! Der Frühling kommt und es ist Zeit, Ihre Logo-Kappe abzunehmen! 🙂\n\nWenn Sie einen Fehler finden, melden Sie ihn bitte ausführlich unter supflickrdroid@gmail.com\n\nUnd wenn Ihnen die App gefallen hat, unterstützen Sie sie bitte, indem Sie sie bewerten.\n\nDanke!</string>
     <string name="intro_header1">Hallo!</string>
     <string name="intro_description1">"Die Anwendung unterstützt zwei Betriebsarten mit und ohne Berechtigung"</string>
     <string name="intro_header2">Authorization</string>

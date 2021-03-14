@@ -24,7 +24,20 @@ public class QueryPreferences {
     private static final String USER_ID = "user_id";
     private static final String USER_NAME = "user_name";
     private static final String USER_ICON_URL = "user_icon_url";
+    private static final String WELCOME_MESSAGE = "message";
 
+
+    public static void setWelcomeMessageIsShown (Context context) {
+        PreferenceManager.getDefaultSharedPreferences(context)
+                .edit()
+                .putBoolean(WELCOME_MESSAGE, true)
+                .apply();
+    }
+
+    public static boolean isWelcomeMessageShown (Context context) {
+        return PreferenceManager.getDefaultSharedPreferences(context)
+                .getBoolean(WELCOME_MESSAGE, false);
+    }
 
     public static void setIntroShown (Context context, boolean isShown) {
         PreferenceManager.getDefaultSharedPreferences(context)

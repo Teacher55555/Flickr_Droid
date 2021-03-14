@@ -108,12 +108,13 @@ public class CommentsFragment extends Fragment implements Converter, ErrorAdapte
             ImageButton sendButton = getView().findViewById(R.id.message_send_button);
             sendButton.setOnClickListener(
                     v -> {
-                        if (mTextField.getText().length() > 0) {
+                        Context context = getContext();
+                        if (mTextField.getText().length() > 0 && context != null) {
                             InputMethodManager imm = (InputMethodManager) getActivity().
                                     getSystemService(Context.INPUT_METHOD_SERVICE);
                             imm.hideSoftInputFromWindow(mTextField.getWindowToken(), 0);
                             mSwipeRefreshLayout.setRefreshing(true);
-                            new PostCommentTask(mTextField.getText().toString()).execute();
+                            new PostCommentTask(mTextField.getText().toString(), context).execute();
                             mTextField.getText().clear();
                             mTextField.clearFocus();
                         }
@@ -133,8 +134,11 @@ public class CommentsFragment extends Fragment implements Converter, ErrorAdapte
 
 
     private void updateItems() {
-        mFetchItemsTask = new FetchItemsTask(photoID);
-        mFetchItemsTask.execute();
+        Context context = getContext();
+        if (context != null) {
+            mFetchItemsTask = new FetchItemsTask(photoID, context);
+            mFetchItemsTask.execute();
+        }
     }
 
     @Override
@@ -154,14 +158,16 @@ public class CommentsFragment extends Fragment implements Converter, ErrorAdapte
 
     private class FetchItemsTask extends AsyncTask<String, Void, RequestResponse<Comment>> {
         private final String mQuery;
+        private Context mContext;
 
-        public FetchItemsTask(String query) {
+        public FetchItemsTask(String query, Context context) {
             mQuery = query;
+            mContext = context;
         }
 
         @Override
         protected RequestResponse<Comment> doInBackground(String... strings) {
-                return new FlickrFetchr().fetchCommentsList(getContext(), mQuery);
+                return new FlickrFetchr().fetchCommentsList(mContext, mQuery);
         }
 
         @Override
@@ -182,27 +188,30 @@ public class CommentsFragment extends Fragment implements Converter, ErrorAdapte
     private  class PostCommentTask extends AsyncTask<String, Void, RequestResponse<?>> {
 
         private final String mQuery;
+        private Context context;
 
-        public PostCommentTask(String message) {
+        public PostCommentTask(String message, Context context) {
             mQuery = message;
+            this.context = context;
         }
 
         @Override
         protected RequestResponse<?> doInBackground(String... strings) {
-            return new FlickrFetchr().postComment(getActivity(), photoID, mQuery);
+            return new FlickrFetchr().postComment(context, photoID, mQuery);
         }
 
         @Override
         protected void onPostExecute(RequestResponse<?> response) {
             if (response.getConnectionStat() == RequestResponse.CONNECTION_OK
                     && response.getResponseDataStat().equals(RequestResponse.RESPONSE_DATA_OK)) {
-                for (GalleryItem item : GalleryItemBase.getResponse(getActivity()).getItems()) {
+                for (GalleryItem item : GalleryItemBase.getInstance().getResponse(getActivity()).getItems()) {
+//                for (GalleryItem item : GalleryItemBase.getResponse(getActivity()).getItems()) {
                     if (item.getId().equals(photoID)){
                         item.increaseCommentsCount();
                         break;
                     }
                 }
-                new FetchItemsTask(photoID).execute();
+                new FetchItemsTask(photoID, context).execute();
 
             } else {
                 mSwipeRefreshLayout.setRefreshing(false);
@@ -245,11 +254,13 @@ public class CommentsFragment extends Fragment implements Converter, ErrorAdapte
         @Override
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
             Comment comment = mResponse.getItems().get(viewHolder.getAdapterPosition());
-            if (comment.getAuthorId().equals(QueryPreferences.getUserId(getActivity()))) {
+            Context context = getContext();
+            if (comment.getAuthorId().equals(QueryPreferences.getUserId(getActivity()))
+                && context != null) {
                 ((CommentsAdapter) mRecyclerView.getAdapter())
                         .removeComment(viewHolder.getAdapterPosition());
                 String commentId = ((CommentsAdapter.CommentViewHolder) viewHolder).getCommentId();
-                new DelCommentTask(commentId).execute();
+                new DelCommentTask(commentId, context).execute();
             }
         }
 
@@ -275,9 +286,11 @@ public class CommentsFragment extends Fragment implements Converter, ErrorAdapte
     private class DelCommentTask extends AsyncTask<String, Void, RequestResponse<?>> {
 
         private final String mQuery;
+        private final Context context;
 
-        public DelCommentTask(String commentId) {
+        public DelCommentTask(String commentId, Context context) {
             mQuery = commentId;
+            this.context = context;
         }
 
         @Override
@@ -292,15 +305,16 @@ public class CommentsFragment extends Fragment implements Converter, ErrorAdapte
                         getString(R.string.internet_connection_error),
                         Toast.LENGTH_SHORT)
                         .show();
-                new FetchItemsTask(photoID).execute();
+                new FetchItemsTask(photoID, context).execute();
               } else if (!response.getResponseDataStat().equals(RequestResponse.RESPONSE_DATA_OK)) {
                 Toast.makeText(getActivity(),
                         getString(R.string.comment_delete_error),
                         Toast.LENGTH_SHORT)
                         .show();
-                new FetchItemsTask(photoID).execute();
+                new FetchItemsTask(photoID, context).execute();
             } else {
-                for (GalleryItem item : GalleryItemBase.getResponse(getActivity()).getItems()) {
+                  for (GalleryItem item : GalleryItemBase.getInstance().getResponse(getActivity()).getItems()) {
+//                for (GalleryItem item : GalleryItemBase.getResponse(getActivity()).getItems()) {
                       if (item.getId().equals(photoID)){
                           item.decreaseCommentsCount();
                           break;

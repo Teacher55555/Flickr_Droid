@@ -56,7 +56,7 @@ public class FlickrFetchr {
     private static final int CONNECTION_TIMEOUT = 8000;
     private static final String TAG = "FlickrFetchr";
     private static final String FLICKR_URL = "https://api.flickr.com/services/rest/";
-    public static final String PER_PAGE = "125";
+    public static final String PER_PAGE = "125"; //125
 
     private static final String SEARCH_PHOTO_METHOD = "flickr.photos.search";
     private static final String SEARCH_RECENT_PHOTO_METHOD = "flickr.photos.getRecent";

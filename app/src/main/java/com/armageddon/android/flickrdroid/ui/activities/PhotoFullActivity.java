@@ -60,8 +60,10 @@ public class PhotoFullActivity extends AppCompatActivity implements PhotoFullFra
     private static final String GALLERY_ITEM_POSITION = "position";
     private static final String PHOTO_ID = "photo_id";
     private static final String GALLERY_ITEMS = "photo_recent";
+    private static final String NEW_PHOTO_CHUNK_FLAG = "photo_chunk_flag";
 
     private ViewPagerFixed mViewPager;
+    private boolean isDataInserted;
     private boolean isPhotoInfoVisible = true;
     private RequestResponse<GalleryItem> mResponse;
     private List<GalleryItem> mItems;
@@ -95,7 +97,8 @@ public class PhotoFullActivity extends AppCompatActivity implements PhotoFullFra
     public void onBackPressed() {
         mFetchItemsTask.cancel(true);
         mResponse.setItems(mItems);
-        GalleryItemBase.setResponse(this, mResponse);
+        GalleryItemBase.getInstance().setResponse(this, mResponse);
+//        GalleryItemBase.setResponse(this, mResponse);
         Intent data = new Intent();
         UUID mCurrentItemId = mItems.get(mViewPager.getCurrentItem()).getItemId();
         data.putExtra(GALLERY_ITEM_POSITION, mCurrentItemId);
@@ -108,6 +111,7 @@ public class PhotoFullActivity extends AppCompatActivity implements PhotoFullFra
         super.onSaveInstanceState(outState);
         outState.putBoolean(PHOTO_INFO_SHOW, isPhotoInfoVisible);
         outState.putBoolean(SLIDE_SHOW_FLAG, isSlideShowRun);
+        outState.putBoolean(NEW_PHOTO_CHUNK_FLAG, isDataInserted);
     }
 
     @Override
@@ -141,75 +145,81 @@ public class PhotoFullActivity extends AppCompatActivity implements PhotoFullFra
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        ActivityUtils.onActivityCreateSetTheme(this,ActivityUtils.THEME_DARK);
+        ActivityUtils.onActivityCreateSetTheme(this, ActivityUtils.THEME_DARK);
         ActivityUtils.hideStatusBar(this);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_photo_full);
+        mResponse = GalleryItemBase.getInstance().getResponse(this);
+        mItems = mResponse.getItems();
+        if (mItems == null) {
+            Intent intent = SearchActivity.newIntent(this, null, SearchActivity.SHOW_MODE, false);
+            startActivity(intent);
+        } else {
+            setContentView(R.layout.activity_photo_full);
+            mQueryType = mResponse.getQueryType();
+            mQuery = mResponse.getQuery();
+            mCategory = mResponse.getCategory();
 
-//        if (mResponse == null) {
-           mResponse = GalleryItemBase.getResponse(this);
-           mItems = mResponse.getItems();
-           mQueryType = mResponse.getQueryType();
-           mQuery = mResponse.getQuery();
-           mCategory = mResponse.getCategory();
-//        }
-
-        if (savedInstanceState != null) {
-            isPhotoInfoVisible = savedInstanceState.getBoolean(PHOTO_INFO_SHOW);
-            isSlideShowRun = savedInstanceState.getBoolean(SLIDE_SHOW_FLAG);
-        }
-
-        mViewPager = findViewById(R.id.view_pager);
-        mViewPager.setOffscreenPageLimit(OFFSCREEN_PAGES_LIMIT);  //instant pages load limit for fast browsing
-        mViewPager.setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager(),
-                FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
-            @NonNull
-            @Override
-            public Fragment getItem(int position) {
-                return PhotoFullFragment.newInstance(mItems.get(position), isPhotoInfoVisible);
+            if (savedInstanceState != null) {
+                isPhotoInfoVisible = savedInstanceState.getBoolean(PHOTO_INFO_SHOW);
+                isSlideShowRun = savedInstanceState.getBoolean(SLIDE_SHOW_FLAG);
+                isDataInserted = savedInstanceState.getBoolean(NEW_PHOTO_CHUNK_FLAG);
             }
 
-            @Override
-            public int getCount() {
-                return mItems.size();
-            }
-        });
+            mViewPager = findViewById(R.id.view_pager);
+            mViewPager.setOffscreenPageLimit(OFFSCREEN_PAGES_LIMIT);  //instant pages load limit for fast browsing
+            mViewPager.setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager(),
+                    FragmentStatePagerAdapter.POSITION_NONE) {
+                @NonNull
+                @Override
+                public Fragment getItem(int position) {
+                    return PhotoFullFragment.newInstance(mItems.get(position), isPhotoInfoVisible);
+                }
 
+                @Override
+                public int getCount() {
+                    if (isDataInserted) {
+                        isDataInserted = false;
+                        notifyDataSetChanged();
+                    }
+                    return mItems.size();
+                }
+            });
 
-        mViewPager.setPageTransformer(false, new DepthPageTransformer());
-        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            mViewPager.setPageTransformer(false, new DepthPageTransformer());
+            mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                @Override
+                public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-            }
+                }
 
-            @Override
-            public void onPageSelected(int position) {
-                if (!isFetchingOn && mResponse.getPage() < mResponse.getPages()
-                        && mItems.size() - position < ITEMS_LOAD_BORDER
-                        && mQueryType != null) {
-                    isFetchingOn = true;
-                    mFetchItemsTask = new FetchItemsTask();
-                    mFetchItemsTask.execute();
+                @Override
+                public void onPageSelected(int position) {
+                    if (!isFetchingOn && mResponse.getPage() < mResponse.getPages()
+                            && mItems.size() - position < ITEMS_LOAD_BORDER
+                            && mQueryType != null) {
+                        isFetchingOn = true;
+                        mFetchItemsTask = new FetchItemsTask();
+                        mFetchItemsTask.execute();
+                    }
+                }
+
+                @Override
+                public void onPageScrollStateChanged(int state) {
+
+                }
+            });
+
+            // Get photo ID from previous activity and start viewing from picture with the same ID
+
+            UUID currentPhotoId = (UUID) getIntent().getSerializableExtra(PHOTO_ID);
+            for (int i = 0; i < mItems.size(); i++) {
+                if (mItems.get(i).getItemId().equals(currentPhotoId)) {
+                    mViewPager.setCurrentItem(i, false);
+                    break;
                 }
             }
 
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-
-        // Get photo ID from previous activity and start viewing from picture with the same ID
-
-        UUID currentPhotoId = (UUID) getIntent().getSerializableExtra(PHOTO_ID);
-        for (int i = 0; i < mItems.size(); i++) {
-            if (mItems.get(i).getItemId().equals(currentPhotoId)) {
-                mViewPager.setCurrentItem(i, false);
-                break;
-            }
         }
-
     }
 
     /**
@@ -275,7 +285,7 @@ public class PhotoFullActivity extends AppCompatActivity implements PhotoFullFra
             if (mResponse.getConnectionStat() == RequestResponse.CONNECTION_OK
                     && mResponse.getResponseDataStat().equals(RequestResponse.RESPONSE_DATA_OK)) {
                 mItems.addAll(response.getItems());
-                Objects.requireNonNull(mViewPager.getAdapter()).notifyDataSetChanged();
+                isDataInserted = true;
                 isFetchingOn = false;
             }
 
@@ -299,7 +309,7 @@ public class PhotoFullActivity extends AppCompatActivity implements PhotoFullFra
 
         isPhotoInfoVisible = isVisible;
         mViewPager.getAdapter().notifyDataSetChanged();
-        for (int i = 1; i < OFFSCREEN_PAGES_LIMIT - 1; i++) {  // current limit is 3
+        for (int i = 1; i < OFFSCREEN_PAGES_LIMIT + 1; i++) {  // current limit is 3
             int positionForward = mViewPager.getCurrentItem() + i;
             int positionBack = mViewPager.getCurrentItem() - i;
             if (positionForward < mViewPager.getAdapter().getCount()) {
@@ -487,10 +497,13 @@ public class PhotoFullActivity extends AppCompatActivity implements PhotoFullFra
         public boolean onInterceptTouchEvent(MotionEvent ev) {
             try {
                 return super.onInterceptTouchEvent(ev);
-            } catch (IllegalArgumentException ex) {
+            } catch (IllegalArgumentException | IllegalStateException ex) {
                 ex.printStackTrace();
             }
             return false;
         }
     }
+
+
+
 }
