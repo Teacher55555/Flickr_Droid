@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary">
+
+
+    <ImageView
+        android:id="@+id/antennaStem"
+        android:layout_width="10dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="170dp"
+        app:srcCompat="@drawable/antenna_stem" />
+
+    <ImageView
+        android:id="@+id/face"
+        android:layout_marginBottom="100dp"
+        android:layout_width="170dp"
+        android:layout_height="130dp"
+        android:src="@drawable/face"
+        android:layout_gravity="center"
+        />
+
+    <ImageView
+        android:layout_marginBottom="100dp"
+        android:id="@+id/leftEye"
+        android:layout_width="40dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="40dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/left_eye" />
+
+    <ImageView
+        android:layout_marginBottom="100dp"
+        android:id="@+id/rightEye"
+        android:layout_width="40dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="40dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/right_eye" />
+
+    <ImageView
+        android:id="@+id/antennaCap"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="190dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/antenna_cap" />
+
+    <TextView
+        android:id="@+id/logoText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        tools:text="Flickr Droid" />
+
+</FrameLayout>

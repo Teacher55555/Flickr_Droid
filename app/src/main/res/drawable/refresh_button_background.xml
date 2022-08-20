@@ -1,0 +1,8 @@
+<!-- create gradient you want to use with the angle you want to use -->
+<shape android:shape="rectangle"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="?attr/tabIconTint"/>
+    <corners android:radius="10dp"/>
+
+</shape>
+    <!-- create the stroke for top, left, bottom and right with the dp you want -->

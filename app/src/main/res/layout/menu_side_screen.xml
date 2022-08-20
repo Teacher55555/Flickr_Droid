@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?attr/colorPrimary">
+
+    <RelativeLayout
+        android:id="@+id/person_icon_layout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="150dp">
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:id="@+id/icon_close"
+            android:visibility="gone"
+            android:layout_toEndOf="@id/person_back"
+            android:src="@drawable/ic_baseline_close_24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/state_pressed_ripple_corners"
+            app:tint="?attr/titleTextColor" />
+
+        <ImageView
+            android:id="@+id/person_back"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/category_background"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/person_image_container"
+            android:layout_gravity="center"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerInParent="true"
+            app:cardBackgroundColor="?attr/colorPrimary"
+            app:cardCornerRadius="60dp">
+
+            <ImageView
+                android:id="@+id/person_icon"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/icon_user_logout"
+                />
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/person_real_name"
+        android:layout_below="@id/person_icon_layout"
+        android:layout_marginTop="4dp"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="?attr/titleTextColor"
+        android:maxLines="1"
+        android:background="@drawable/state_pressed_ripple_corners"
+        android:text="@string/sing_in" />
+
+<!--    <ImageView-->
+<!--        android:layout_marginStart="70dp"-->
+<!--        android:layout_marginTop="3dp"-->
+<!--        android:layout_alignBottom="@id/person_real_name"-->
+<!--        android:layout_alignTop="@id/person_real_name"-->
+<!--        android:layout_alignStart="@id/person_real_name"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/ic_baseline_login_24"/>-->
+
+    <View android:id="@+id/divider"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="26dp"
+        android:layout_below="@id/person_real_name"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="?attr/subtitleTextColor"/>
+
+    <TextView
+        android:id="@+id/menu_followings_button"
+        android:textAlignment="viewStart"
+        android:layout_marginTop="16dp"
+        android:paddingStart="26dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingEnd="16dp"
+        android:layout_below="@id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="?attr/titleTextColor"
+        android:drawablePadding="16dp"
+        android:foreground="@drawable/state_pressed_ripple_no_corners"
+        android:clickable="true"
+        android:text="@string/personal_page_followings"
+        app:drawableStartCompat="@drawable/home_person_private" />
+
+    <TextView
+        android:id="@+id/menu_camera_roll_button"
+        android:textAlignment="viewStart"
+        android:paddingStart="26dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingEnd="16dp"
+        android:layout_below="@id/menu_followings_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="?attr/titleTextColor"
+        android:drawablePadding="16dp"
+        android:foreground="@drawable/state_pressed_ripple_no_corners"
+        android:clickable="true"
+        android:text="@string/user_camera_roll"
+        app:drawableStartCompat="@drawable/camera_roll_icon" />
+
+    <TextView
+        android:id="@+id/menu_contacts_button"
+        android:textAlignment="viewStart"
+        android:paddingStart="26dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingEnd="16dp"
+        android:layout_below="@id/menu_camera_roll_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="?attr/titleTextColor"
+        android:drawablePadding="16dp"
+        android:foreground="@drawable/state_pressed_ripple_no_corners"
+        android:clickable="true"
+        android:text="@string/contacts"
+        app:drawableStartCompat="@drawable/contacts_person_private" />
+
+    <TextView
+        android:id="@+id/menu_search_button"
+        android:paddingStart="26dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingEnd="16dp"
+        android:layout_below="@id/menu_contacts_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="viewStart"
+        android:textSize="18sp"
+        android:textColor="?attr/titleTextColor"
+        android:drawablePadding="16dp"
+        android:foreground="@drawable/state_pressed_ripple_no_corners"
+        android:clickable="true"
+        android:text="@string/search_photos"
+        app:drawableStartCompat="@drawable/menu_icon_search" />
+
+    <TextView
+        android:id="@+id/menu_info_button"
+        android:paddingStart="26dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingEnd="16dp"
+        android:textAlignment="viewStart"
+        android:layout_below="@id/menu_search_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="?attr/titleTextColor"
+        android:drawablePadding="16dp"
+        android:foreground="@drawable/state_pressed_ripple_no_corners"
+        android:clickable="true"
+        android:text="@string/menu_instruction"
+        app:drawableStartCompat="@drawable/menu_icon_info" />
+
+    <TextView
+        android:id="@+id/menu_rate_button"
+        android:textAlignment="viewStart"
+        android:paddingStart="26dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingEnd="16dp"
+        android:layout_below="@id/menu_info_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="?attr/titleTextColor"
+        android:drawablePadding="16dp"
+        android:foreground="@drawable/state_pressed_ripple_no_corners"
+        android:clickable="true"
+        android:text="@string/rate_the_app"
+        app:drawableStartCompat="@drawable/menu_icon_thumbs_up" />
+
+    <TextView
+        android:id="@+id/menu_settings_button"
+        android:textAlignment="viewStart"
+        android:paddingStart="26dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingEnd="16dp"
+        android:layout_below="@id/menu_rate_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="?attr/titleTextColor"
+        android:drawablePadding="16dp"
+        android:foreground="@drawable/state_pressed_ripple_no_corners"
+        android:clickable="true"
+        android:text="@string/settings"
+        app:drawableStartCompat="@drawable/menu_icon_settings_selector" />
+
+
+</RelativeLayout>
+

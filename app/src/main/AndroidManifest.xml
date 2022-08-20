@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.armageddon.android.flickrdroid">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".common.FlickDroidApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.activities.BlockedUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.LogInInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.LogInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.OauthActivity"
+            android:exported="true"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="callback"
+                    android:scheme="appforflickr" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activities.FollowingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.CameraRollActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.PrivateHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.HomePrivateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.PrivatePersonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.PersonContactListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.SettingsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.MapActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".ui.activities.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.PersonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.GroupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.PersonPhotoFolderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.PhotoCommentsActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ui.activities.TopPhotoActivity" />
+        <activity
+            android:name=".ui.activities.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activities.IntroActivity"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAkI5WXSGsyTiqSgC_JXzg97bOzWnq43K4" />
+    </application>
+
+</manifest>

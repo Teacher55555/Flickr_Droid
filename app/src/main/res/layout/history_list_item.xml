@@ -1,0 +1,103 @@
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:paddingStart="18dp"
+    android:paddingEnd="18dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/clearButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="?attr/tabTextColor"
+        android:drawablePadding="10dp"
+        android:maxLines="1"
+        android:text="clear all"
+        android:textAlignment="viewEnd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:drawableTint="?attr/tabTextColor"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/history_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/recent_icon"
+            android:src="@drawable/recent_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="?attr/tabTextColor" />
+
+        <TextView
+            android:text="sdfdsf"
+            android:id="@+id/text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/tabTextColor"
+            android:textAlignment="viewStart"
+            android:paddingStart="30dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:maxLines="1"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintStart_toEndOf="@id/recent_icon"
+            app:layout_constraintEnd_toStartOf="@id/icon_close"
+            app:layout_constraintTop_toTopOf="@id/recent_icon"
+            app:layout_constraintBottom_toBottomOf="@id/recent_icon"
+            app:drawableTint="?attr/tabTextColor" />
+
+        <ImageView
+            android:id="@+id/icon_close"
+            android:src="@drawable/search_close_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/text_view"
+            app:layout_constraintBottom_toBottomOf="@id/text_view"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="?attr/tabTextColor" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <TextView-->
+<!--        android:id="@+id/text_view"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:textColor="?attr/tabTextColor"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:drawablePadding="10dp"-->
+<!--        android:maxLines="1"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@id/icon_close"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:drawableTint="?attr/tabTextColor"-->
+<!--        draw-->
+<!--        app:drawableStartCompat="@drawable/recent_icon" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/icon_close"-->
+<!--        android:src="@drawable/search_close_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@id/text_view"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/text_view"-->
+<!--        android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--        app:tint="?attr/tabTextColor" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

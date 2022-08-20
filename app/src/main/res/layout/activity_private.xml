@@ -1,0 +1,214 @@
+
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/drawer_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/appBar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                app:contentInsetStartWithNavigation="0dp"
+                app:menu="@menu/common_menu"
+                android:id="@+id/toolbar"
+                app:title=""
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:navigationIcon="@drawable/icon_home_arrow_button"
+                android:background="?attr/colorPrimary">
+
+                <ImageView
+                    android:id="@+id/logoImage"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/sea"/>
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_marginStart="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/titleTextColor"
+                    android:textSize="18sp"
+                    />
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:background="?attr/subtitleTextColor"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <FrameLayout
+            app:layout_constraintTop_toBottomOf="@id/appBar_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="?attr/colorPrimary">
+        </FrameLayout>
+
+<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--        android:id="@+id/bottom_nav"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:labelVisibilityMode="unlabeled"-->
+<!--        android:layout_gravity="bottom"-->
+<!--        android:background="?attr/colorPrimary"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        app:itemIconTint="?attr/tabIconTint"-->
+<!--        app:menu="@menu/private_person_bottom_menu" >-->
+
+<!--    </com.google.android.material.bottomnavigation.BottomNavigationView>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/menu_bottom"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            android:background="?attr/colorPrimary"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_height="50dp">-->
+
+<!--            <ImageView-->
+<!--                android:background="@null"-->
+<!--                android:focusable="true"-->
+<!--                android:focusedByDefault="true"-->
+<!--                android:clickable="true"-->
+<!--                android:src="@drawable/ic_round_home_filled_24"-->
+<!--                android:layout_weight="1"-->
+<!--                android:id="@+id/home_button"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_width="26dp"-->
+<!--                android:layout_height="26dp">-->
+<!--            </ImageView>-->
+
+<!--            <ImageView-->
+<!--                android:src="@drawable/favorites_person_private"-->
+<!--                android:layout_weight="1"-->
+<!--                android:id="@+id/favorites_button"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_width="26dp"-->
+<!--                android:layout_height="26dp">-->
+<!--            </ImageView>-->
+<!--            <ImageView-->
+<!--                android:src="@drawable/search_person_private"-->
+<!--                android:layout_weight="1"-->
+<!--                android:id="@+id/search_button"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_width="26dp"-->
+<!--                android:layout_height="26dp">-->
+<!--            </ImageView>-->
+
+<!--            <ImageView-->
+<!--                android:src="@drawable/contacts_person_private"-->
+<!--                android:layout_weight="1"-->
+<!--                android:id="@+id/contacts_button"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_width="26dp"-->
+<!--                android:layout_height="26dp">-->
+<!--            </ImageView>-->
+
+<!--            <ImageView-->
+<!--                android:src="@drawable/ic_outline_account_circle_stroke_24"-->
+<!--                android:layout_weight="1"-->
+<!--                android:id="@+id/person_button"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_width="26dp"-->
+<!--                android:layout_height="26dp">-->
+<!--            </ImageView>-->
+
+<!--        </LinearLayout>-->
+
+    <ProgressBar
+        android:visibility="invisible"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/fragment_progress_bar"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/colorWhite"
+        android:layout_gravity="bottom|center"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+    <!--    <com.github.ybq.android.spinkit.SpinKitView-->
+    <!--        android:id="@+id/activity_progress_bar"-->
+    <!--        android:visibility="invisible"-->
+    <!--        style="@style/SpinKitView.RotatingPlane"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="bottom|end"-->
+    <!--        app:SpinKit_Color="?attr/colorAccent" />-->
+
+
+    <ProgressBar
+        android:visibility="invisible"
+        android:id="@+id/activity_progress_bar"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="?attr/colorAccent"
+        android:layout_marginBottom="66dp"
+        android:layout_marginEnd="16dp"
+        android:layout_gravity="bottom|end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <ProgressBar
+        android:visibility="invisible"
+        android:id="@+id/flickr_item_progress_bar"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="?attr/colorAccent"
+        android:layout_marginBottom="66dp"
+        android:layout_marginEnd="16dp"
+        android:layout_gravity="bottom|end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="?attr/colorPrimary"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@null"
+        app:menu="@null">
+        <include layout="@layout/menu_side_screen"/>
+    </com.google.android.material.navigation.NavigationView>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

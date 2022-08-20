@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/drawer_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+<!--            <androidx.viewpager2.widget.ViewPager2-->
+<!--                android:id="@+id/view_pager"-->
+<!--                android:layout_marginBottom="50dp"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>-->
+
+            <FrameLayout
+                android:id="@+id/inner_frame_container"
+                android:layout_marginBottom="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+<!--            <LinearLayout-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_height="50dp">-->
+
+<!--                <ImageView-->
+<!--                    android:background="@null"-->
+<!--                    android:focusable="true"-->
+<!--                    android:focusedByDefault="true"-->
+<!--                    android:clickable="true"-->
+<!--                    android:src="@drawable/ic_round_home_filled_24"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:id="@+id/home_button"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_width="26dp"-->
+<!--                    android:layout_height="26dp">-->
+<!--                </ImageView>-->
+
+<!--                <ImageView-->
+<!--                    android:src="@drawable/favorites_person_private"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:id="@+id/favorites_button"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_width="26dp"-->
+<!--                    android:layout_height="26dp">-->
+<!--                </ImageView>-->
+<!--                <ImageView-->
+<!--                    android:src="@drawable/search_person_private"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:id="@+id/search_button"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_width="26dp"-->
+<!--                    android:layout_height="26dp">-->
+<!--                </ImageView>-->
+
+<!--                <ImageView-->
+<!--                    android:src="@drawable/contacts_person_private"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:id="@+id/contacts_button"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_width="26dp"-->
+<!--                    android:layout_height="26dp">-->
+<!--                </ImageView>-->
+
+<!--                <ImageView-->
+<!--                    android:src="@drawable/ic_outline_account_circle_stroke_24"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:id="@+id/person_button"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_width="26dp"-->
+<!--                    android:layout_height="26dp">-->
+<!--                </ImageView>-->
+
+<!--            </LinearLayout>-->
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_nav"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:labelVisibilityMode="unlabeled"
+                android:layout_gravity="bottom"
+                android:background="?attr/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:itemIconTint="?attr/tabIconTint"
+                app:menu="@menu/private_person_bottom_menu" >
+
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--        <androidx.viewpager2.widget.ViewPager2-->
+<!--            android:id="@+id/view_pager"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>-->
+
+
+<!--        <ProgressBar-->
+<!--            android:visibility="gone"-->
+<!--            android:id="@+id/progress_bar"-->
+<!--            android:indeterminate="true"-->
+<!--            android:indeterminateTintMode="src_atop"-->
+<!--            android:indeterminateTint="?attr/colorAccent"-->
+<!--            android:layout_margin="16dp"-->
+<!--            android:layout_gravity="bottom|end"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            />-->
+
+<!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--            android:id="@+id/bottom_navigation"-->
+<!--            app:labelVisibilityMode="unlabeled"-->
+<!--            android:layout_gravity="bottom"-->
+<!--            android:background="?attr/colorPrimary"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:menu="@menu/private_person_bottom_menu" />-->
+
+
+

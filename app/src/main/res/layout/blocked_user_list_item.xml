@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?attr/colorPrimary"
+    android:foreground="@drawable/state_pressed_ripple_no_corners"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/icon_frame"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:background="?attr/colorPrimary"
+                app:cardCornerRadius="28dp">
+
+                <ImageView
+                    android:id="@+id/author_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="?attr/colorPrimary"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/cat" />
+            </androidx.cardview.widget.CardView>
+
+
+
+
+            <ImageView
+                android:id="@+id/icon_back"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="?attr/colorPrimary"
+                android:src="@drawable/category_background" />
+
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/author_name"
+            android:layout_marginTop="-6dp"
+            android:layout_marginStart="16dp"
+            android:layout_alignTop="@id/icon_frame"
+            android:layout_alignBottom="@id/icon_frame"
+            android:gravity="center_vertical"
+            android:layout_toEndOf="@id/icon_frame"
+            android:layout_toStartOf="@id/unlock_user_button"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Donald Trump"
+            android:textSize="18sp"
+            android:textColor="?attr/colorAccent"
+            />
+
+        <ImageButton
+            android:id="@+id/unlock_user_button"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/ic_outline_lock_open_24"
+            android:background="@color/colorTransparent"
+            android:layout_alignTop="@id/icon_frame"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@id/icon_frame"/>
+
+
+
+        <View android:id="@+id/divider"
+            android:layout_marginTop="12dp"
+            android:layout_below="@id/icon_frame"
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:background="?attr/subtitleTextColor">
+        </View>
+    </RelativeLayout>
+
+</LinearLayout>
+

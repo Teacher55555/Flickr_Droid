@@ -1,0 +1,289 @@
+<resources>
+    <string name="app_name">Flickr Droid</string>
+    <!--    <string name="app_name_version">Flickr Droid\nVersion 2.0</string>-->
+    <string name="intro_version_1_10">Hello! Spring is coming and it is time to take off your logo cap! 🙂 \n\nIf you find a bug, please report it in detail to supflickrdroid@gmail.com\n\nAnd if you liked the APP, please support it by rating it.\n\nThank you!</string>
+    <string name="intro_version_2_0">Hello!\n\nMeet version 2.0! This version has faster photo loading, redesigned interface, added search filters, fixed bugs and much more! You can find the full list of changes in the \"About\" section.\n\nIf you have any bugs/suggestions please contact me by supflickrdroid@gmail.com\n\nIf you like the app, please support it by rating it on Google Play!\n\nThank you!</string>
+    <string name="intro_header1">Hello!</string>
+    <string name="intro_description1">The application supports 2 modes of operation, with and without authorization</string>
+    <string name="intro_header2">Authorization</string>
+    <!--    <string name="intro_description2">✓ access to personal page\n✓ add / delete comments\n✓ add / delete favorites photos\n✓ add photos to albums / groups\n✓ photo privacy control</string>-->
+    <string name="intro_header3">Main menu</string>
+    <string name="intro_description2">✓ access to personal page\n
+        ✓ add / delete comments\n
+        ✓ add / delete favorites photos\n
+        ✓ add photos to albums / groups
+        \n✓ photo privacy control\n
+
+       </string>
+    <string name="intro_description3">You can always log in by pulling out the main menu on the right and clicking on the avatar. After authorization, clicking on the avatar will open your personal page.</string>
+    <string name="intro_header4">Flexible search</string>
+    <string name="intro_description4">1 - best photos for a specific date\n2 - search photos, groups, users\n3 - search photos on the map\n4 - search photos by categories</string>
+    <string name="intro_header5">Search on the map</string>
+    <string name="intro_description5">Pull up on the logo antenna to slide out the settings panel. If necessary, the photo can be moved by holding your finger on it</string>
+    <string name="intro_header6">Photo Information</string>
+    <string name="intro_description6">Pull the shutter up to see additional information about the photo</string>
+    <string name="intro_header7">Google Maps</string>
+    <string name="intro_description7">"Click on the marker on the map to show the location of the photo in Google Maps</string>
+    <string name="intro_header8">Link to Flickr.com</string>
+    <string name="intro_description8">Clicking on a profile photo (group, album, etc.) will open the current page based on the active tab at Flickr.com in the browser</string>
+    <string name="intro_header9">Camera Roll</string>
+    <string name="intro_description9">Here you can change the privacy of your photos or select photos to add them to an album or group</string>
+    <string name="intro_header10">Deleting comments</string>
+    <string name="intro_description10">Swipe a comment to the left to delete it.</string>
+    <string name="intro_header11">Thank you!</string>
+    <string name="intro_description11">If you like the app, please support it by rating it</string>
+    <string name="intro_header12">Search filters</string>
+    <string name="intro_description12">Try alternative search filters. Relevant is set by default.</string>
+
+    <string name="IntroSkip">Skip!</string>
+    <string name="login">Log in</string>
+    <string name="Next">Next</string>
+    <string name="Back">Back</string>
+    <string name="introFinish">GO!</string>
+    <string name="sing_in">Log in</string>
+    <string name="sing_in_later">Not now</string>
+
+    <string name="search_top">Best photos</string>
+    <string name="search_recent">Recent photos</string>
+    <string name="search_on_map_button_text">Search on map %d photos</string>
+    <string name="search_on_map">Search on the map</string>
+    <string name="search_on_map_near_me">Search near me</string>
+
+    <string name="data">20\nDEC\n2020</string>
+    <string name="people">People</string>
+    <string name="person">User</string>
+    <string name="photo">Photos</string>
+    <string name="groups">Groups</string>
+    <string name="date_dialog_title">Best photos for:</string>
+    <string name="search_date_title_result">""</string>
+
+    <string name="pro_flag">PRO</string>
+    <string name="search_photo_hint">Title, description or tags </string>
+    <string name="search_user_hint">Username or e-mail</string>
+    <string name="search_group_hint">Name</string>
+
+    <string name="comment_delete_error">you don\'t have permission to delete this comment</string>
+    <string name="internet_connection_error">Oops! Something went wrong. Please try again later</string>
+    <string name="no_internet_connection_error">No connection to Flickr.com\nPlease check your Internet connection</string>
+    <string name="time_out_error">Waiting too long for a response from Flickr.com\nTry refreshing the page</string>
+    <string name="request_error">Oops! That page can\'t be found. Try a different search</string>
+    <string name="search_photos_error">Oops!\nPhotos not found. Try a different search</string>
+    <string name="search_groups_error">Oops!\nGroups not found. Try a different search</string>
+    <string name="map_request_error">Oops! There are no photos here.\nTry a different search</string>
+    <string name="search_user_error">Oops! No such user could be found. As a reminder, you can only search by exact username or email. Try a different search</string>
+    <string name="photos_error">Oops! There are no photos here</string>
+    <string name="interestings_photos_error">Looks like Flickr.com has not prepared any photos for this date yet. Try to choose a date earlier</string>
+    <string name="user_has_no_photos_error">This user has no public photos</string>
+    <string name="user_has_no_favorites_photos_error">This user has no favorites photos</string>
+    <string name="user_has_no_followings_error">This user has no followings</string>
+    <string name="user_has_no_albums_error">This user has no albums</string>
+    <string name="user_has_no_galleries_error">This user has no galleries</string>
+    <string name="group_has_private_photos_error">You are not in this group. The group has private photos</string>
+    <string name="user_has_no_groups_error">This user is not a member of any group</string>
+    <string name="no_comments">There are no comments yet</string>
+    <string name="data_receive_fail">Data receive failed. Please try again later</string>
+
+    <string name="internet_connection_error_map">Something went wrong</string>
+    <string name="request_error_map">Bad request</string>
+
+
+    <string name="public_photos">Public photos</string>
+    <string name="location">Location</string>
+    <string name="first_posted_photo_date">First photo posted</string>
+
+    <string name="members">Members</string>
+    <string name="photos">Photos</string>
+    <string name="topics">Discussions</string>
+    <string name="views">Views</string>
+
+    <string name="group_list_private">P\nR\nI\nV\nA\nT\nE</string>
+    <string name="group_list_invite">I\nN\nV\nI\nT\nE</string>
+    <string name="group_list_public">P\nU\nB\nL\nI\nC</string>
+    <string name="group_text_private">private</string>
+    <string name="group_text_invite">invite</string>
+    <string name="group_text_public">public</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="GPS_OFF_warning">Your GPS seems to be disabled, do you want to enable it?</string>
+    <string name="location_access_deny_warning">To search for photos near your geolocation, you need to allow Flickr Droid to access this device\'s location. Open app settings for this?</string>
+    <string name="worldwide">Worldwide</string>
+    <string name="near_me">Near me</string>
+    <string name="cancel">Cancel</string>
+    <string name="download_start">Download started…</string>
+    <string name="search_blank_warning">Search field must not be blank.</string>
+
+    <string name="user_public">Public</string>
+    <string name="user_albums">Albums</string>
+    <string name="user_groups">Groups</string>
+    <string name="user_galleries">Galleries</string>
+    <string name="user_favorites">Favorites</string>
+    <string name="user_about">About</string>
+    <string name="user_camera_roll">Camera Roll</string>
+    <string name="original_link">Original link:\n</string>
+
+    <string name="photo_privacy_public">Public</string>
+    <string name="photo_privacy_private">Private</string>
+    <string name="photo_privacy_friends">Friends</string>
+    <string name="photo_privacy_family">Family</string>
+    <string name="photo_privacy_family_friends">Friends and Family</string>
+
+    <string name="group_photos">Photo</string>
+    <string name="group_description">Description</string>
+
+    <string name="storage_access_warning">To share a photo, you first need to download it to your device, and this requires permission to access the storage.</string>
+    <string name="download_access_warning">In order to download photos to the device, you must allow access to the storage.</string>
+    <string name="slide_show_started">Slide show started with %d sec. interval.To stop tap the screen</string>
+    <string name="slide_show_stopped">Slide show stopped</string>
+
+    <string name="comments">Comments</string>
+    <string name="date">Created</string>
+    <string name="contacts">Contacts</string>
+
+    <string name="personal_page_followings">Followings</string>
+    <string name="personal_page_favorites">Favorites</string>
+    <string name="personal_page_cameraRoll">Camera Roll</string>
+    <string name="personal_page_public">Public</string>
+    <string name="personal_page_albums">Albums</string>
+    <string name="personal_page_gallery">Gallery</string>
+    <string name="personal_page_groups">Groups</string>
+    <string name="personal_page_about">About</string>
+
+
+    <string name="years_ago">years ago</string>
+    <string name="years_2_4_ago">years ago</string>
+    <string name="year_ago">year ago</string>
+    <string name="months_ago">months ago</string>
+    <string name="month_ago">month ago</string>
+    <string name="days_ago">days ago</string>
+    <string name="day_ago">day ago</string>
+    <string name="hours_ago">hours ago</string>
+    <string name="hour_ago">hour ago</string>
+    <string name="minutes_ago">minutes ago</string>
+    <string name="minute_ago">minute ago</string>
+    <string name="seconds_ago">seconds ago</string>
+    <string name="second_ago">second ago</string>
+    <string name="now">now</string>
+    <string name="personal_page">Personal page</string>
+
+    <string name="photo_not_yet_loaded">Please wait until the photo is loaded</string>
+    <string name="private_message">The group is PRIVATE! Access denied!</string>
+
+    <string name="group_default_description">There is no description for this group</string>
+    <string name="group_default_rules">There are no rules for this group. The administrator for this group has not set up any rules. However, please play nicely!</string>
+
+
+    <string name="photo_quantity">Quantity:</string>
+    <string name="loading">Loading…</string>
+    <string name="max_photo_on_the_map">Max: %d</string>
+    <string name="max">Max:</string>
+    <string name="keywords">Keywords:</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="map_search_hint">Shows the best photos by default</string>
+    <string name="camera_title_lens">Lens</string>
+    <string name="camera_title_aperture">Aperture</string>
+    <string name="camera_title_focal_length">Focal Length</string>
+    <string name="camera_exposure_title">Exposure</string>
+    <string name="camera_title_iso">ISO</string>
+
+    <string name="comment_hint">Write a comment…</string>
+    <string name="gallery_view">Gallery view type</string>
+    <string name="picture_show_quality">Image show quality</string>
+    <string name="quality_640_small">640\nSmall</string>
+    <string name="quality_800_small">800\nSmall</string>
+    <string name="quality_1024_medium">1024\nMedium</string>
+    <string name="quality_2048_large">2048\nLarge</string>
+    <string name="download_picture_quality">Quality of downloaded photos</string>
+    <string name="max_quality">Max\n quality</string>
+    <string name="slide_show_duration">Slide show duration</string>
+    <string name="slideshow_3_sec">3 sec</string>
+    <string name="slideshow_4_sec">4 sec</string>
+    <string name="slideshow_5_sec">5 sec</string>
+    <string name="slideshow_10_sec">10 sec</string>
+    <string name="slideshow_15_sec">15 sec</string>
+    <string name="slideshow_20_sec">20 sec</string>
+    <string name="theme">Theme</string>
+    <string name="default_theme">Default</string>
+    <string name="light">Light</string>
+    <string name="dark">Dark</string>
+    <string name="about">About</string>
+    <string name="privacy_policy">Privacy Policy (operated by Flickr.com)</string>
+    <string name="history_switch">Save search history</string>
+    <string name="cash_switch">Clear cache on exit</string>
+    <string name="refresh">Refresh</string>
+    <string name="title_activity_oauth">OauthActivity</string>
+    <string name="redirect_to_flickr_message">https://www.flickr.com</string>
+    <string name="redirect_to_app_message">Flickr Droid</string>
+    <string name="oauth_title">Redirect to:</string>
+    <string name="please_wait">Please wait…</string>
+    <string name="back_to_app">Back to App</string>
+    <string name="search_photos">Search photos</string>
+    <string name="show_intro">Show intro</string>
+    <string name="menu_instruction">Instruction</string>
+    <string name="rate_the_app">Rate the app</string>
+    <string name="settings">Settings</string>
+    <string name="photoLocation">%1$s, %2$s, %3$s</string>
+
+    <string name="own_photo_fave_warning">You can\'t favorite your own photo</string>
+    <string name="not_singed_up_warning">You have to be logged in</string>
+    <string name="_1">1</string>
+    <string name="quantity_of_photos_on_the_map">Quantity of photos on the map:</string>
+    <string name="calculating_message">Calculating…</string>
+    <string name="error">error</string>
+    <string name="cache_size_tap_to_clear">Cache size (tap to clear)</string>
+    <string name="reset">Reset</string>
+    <string name="app_version">App version: %s</string>
+    <string name="menu">menu</string>
+    <string name="calendar">calendar</string>
+    <string name="search">Search</string>
+    <string name="ok">OK</string>
+
+    <string name="sort_date_posted_asc">posting date (ascending)</string>
+    <string name="sort_date_posted_desc">posting date (descending)</string>
+    <string name="sort_date_taken_asc">photo taken date (ascending)</string>
+    <string name="sort_date_taken_desc">photo taken date (descending)</string>
+    <string name="sort_interestingness_asc">interesting photos (ascending)</string>
+    <string name="sort_interestingness_desc">interesting photos (descending)</string>
+    <string name="sort_relevance">relevant</string>
+
+    <string name="photos_not_added_to_album">Due to a loss of connection with the server, one or more photos were not added to the album</string>
+    <string name="photos_added_to_album">Photos have been successfully added to the album</string>
+    <string name="photos_not_added_to_group_internet">Due to a loss of connection with the server, one or more photos were not added to the group</string>
+    <string name="photos_not_added_to_group">One or more photos were not added to the group. Check the description of the group.</string>
+    <string name="photos_added_to_group">Photos have been successfully added to the group</string>
+    <string name="no_selected_photo_for_add_group_album">You must select at least one photo to add to an album or group</string>
+
+    <string name="no_thanks">No, thanks</string>
+    <string name="yes_please">Yes, please</string>
+    <string name="receiving_photos_from_flickr">Receiving photos from Flickr</string>
+    <string name="add_photos_to_the_map">Adding %d photos to the map\nPlease wait…</string>
+
+    <string name="photos_selected">Selected photos:  %d</string>
+    <string name="back_to_exit">"Click BACK again to exit"</string>
+
+    <string name="you_are_here">"You are already here"</string>
+    <string name="history_hint">This is where the search history will be stored. You can turn it off in the settings if you want.</string>
+    <string name="history_off">Search history is currently disabled. You can turn it on in the settings if you want.</string>
+    <string name="list_of_changes">List of changes</string>
+    <string name="groups_link_warning">You must be logged in to see the user\'s groups</string>
+
+    <string name="log_in_header_1">Please read</string>
+    <string name="log_in_header_2">1 - Log in with your account</string>
+    <string name="log_in_header_3">2 - Authorize Flickr Droid</string>
+
+    <string name="lock_person">You will no longer see comments from this user in the Flickr Droid app. To unlock, click on the \"lock\" icon on the toolbar.</string>
+    <string name="report_photo">Report photo</string>
+    <string name="log_in_description_1">Authorization takes place in two stages. This will only need to be done once.</string>
+    <string name="log_in_description_2">You will be redirected to the Flickr.com website. Next, log in with your account</string>
+    <string name="log_in_description_3">Now you need to allow Flickr Droid to access to your photos.</string>
+    <string name="text_of_changes">- faster photo loading\n\n- search now has filters\n\n- search history added\n\n- authorized users now have the ability to add photos to albums and groups\n\n- removed section \"Recent Photos\ "\n\n- interface has been redesigned\n\n- the overall stability of the application has been improved\n\n- added support for devices in Arabic</string>
+    <string name="unlock_user">unlock_user</string>
+    <string name="self_block_warning">you can\'t block yourself</string>
+    <string name="empty_block_list_message">you haven\'t blocked anyone yet</string>
+    <string name="blocked_list">Blocked Users</string>
+
+    <!--    <string name="history_hint">Тут будет храниться история поисковых запросов. При желании её можно отключить в настройках.</string>-->
+    <!--    <string name="history_off">Тут будет храниться история поисковых запросов. При желании её можно отключить в настройках.</string>-->
+    <!--    \n\nClick "OK, I'LL AUTHORIZE IT"-->
+
+</resources>

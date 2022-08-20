@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bar_home"
+        android:title=""
+        android:enabled="true"
+        android:iconTintMode="add"
+        android:icon="@drawable/home_person_private" />
+    <item
+        android:id="@+id/bar_faves"
+        android:title=""
+        android:enabled="true"
+        android:icon="@drawable/favorites_person_private" />
+    <item
+        android:id="@+id/bar_search"
+        android:title=""
+        android:enabled="true"
+        android:icon="@drawable/search_person_private" />
+    <item
+        android:id="@+id/bar_contacts"
+        android:title=""
+        android:enabled="true"
+        android:icon="@drawable/contacts_person_private" />
+    <item
+        android:id="@+id/bar_person"
+        android:title=""
+        android:enabled="true"
+        android:icon="@drawable/logo"
+        />
+</menu>

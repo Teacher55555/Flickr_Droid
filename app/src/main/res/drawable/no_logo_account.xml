@@ -1,0 +1,85 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!--base shape layer -->
+    <item
+        android:top="40dp">
+        <shape android:shape="rectangle" >
+            <size android:height="250dp"
+                android:width="200dp"/>
+            <solid android:color="@color/colorTransparent"/>
+
+        </shape>
+    </item>
+
+
+    <!--antenna stem-->
+    <item
+        android:bottom="180dp"
+        android:left="95dp"
+        android:right="95dp"
+        android:top="80dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/colorBlueFlickr" />
+        </shape>
+    </item>
+
+    <!--antenna cap-->
+    <item
+        android:bottom="205.5dp"
+        android:left="90dp"
+        android:right="90.5dp"
+        android:top="65dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/colorPinkFlickr" />
+        </shape>
+    </item>
+
+    <!--gradient stroke-->
+    <item
+        android:bottom="60dp"
+        android:top="100dp"
+        android:left="15dp"
+        android:right="15dp">
+        <shape android:shape="oval" >
+            <gradient
+                android:angle="90"
+                android:endColor="@color/colorPinkFlickr"
+                android:startColor="@color/colorBlueFlickr" />
+
+        </shape>
+    </item>
+
+    <!--white background-->
+    <item
+        android:bottom="70dp"
+        android:left="25dp"
+        android:right="25dp"
+        android:top="110dp">
+        <shape android:shape="oval">
+            <solid android:color="?attr/colorPrimary" />
+        </shape>
+    </item>
+
+    <!--left eye-->
+    <item
+        android:bottom="100dp"
+        android:left="40dp"
+        android:right="120dp"
+        android:top="140dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/colorBlueFlickr" />
+        </shape>
+    </item>
+
+    <!--right eye-->
+    <item
+        android:bottom="100dp"
+        android:left="120dp"
+        android:right="40dp"
+        android:top="140dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/colorPinkFlickr" />
+        </shape>
+    </item>
+
+</layer-list>

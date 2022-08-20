@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    android:id="@+id/swipe_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spin_kit"
+            style="@style/SpinKitView.ThreeBounce"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="top"
+            app:SpinKit_Color="?attr/colorAccent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:visibility="gone"
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/main_layout"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/person_photos_count_layout"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_marginTop="2dp"
+                            android:id="@+id/photo_icon_description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:textColor="?attr/tabTextColor"
+                            android:text="@string/public_photos"
+                            android:drawablePadding="5dp"
+                            app:drawableStartCompat="@drawable/icon_photo_search_stroke" />
+
+                        <TextView
+                            android:layout_marginTop="2dp"
+                            android:id="@+id/person_photos_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:textSize="14sp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:textColor="?attr/tabTextColor"
+                            tools:text="120 000"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <include layout="@layout/divider_horizontal"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/person_photos_date_layout"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_marginTop="2dp"
+                            android:id="@+id/photo_date_icon_description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:textColor="?attr/tabTextColor"
+                            android:text="@string/first_posted_photo_date"
+                            android:drawablePadding="5dp"
+                            app:drawableStartCompat="@drawable/ic_baseline_date_range_24" />
+
+                        <TextView
+                            android:layout_marginTop="2dp"
+                            android:id="@+id/person_photos_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:textSize="14sp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:textColor="?attr/tabTextColor"
+                            tools:text="20.03.2020"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <include layout="@layout/divider_horizontal"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/user_contacts_layout"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_marginTop="2dp"
+                            android:id="@+id/photo_contact_icon_description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:textColor="?attr/tabTextColor"
+                            android:text="@string/contacts"
+                            android:drawablePadding="5dp"
+                            app:drawableStartCompat="@drawable/icon_people_search_stroke" />
+
+                        <TextView
+                            android:layout_marginTop="2dp"
+                            android:id="@+id/person_contacts_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:textSize="14sp"
+                            android:textColor="?attr/tabTextColor"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            tools:text="20"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <include layout="@layout/divider_horizontal"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/person_location_layout"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_marginTop="2dp"
+                            android:id="@+id/person_location_icon_description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:textColor="?attr/tabTextColor"
+                            android:text="@string/location"
+                            android:drawablePadding="5dp"
+                            app:drawableStartCompat="@drawable/ic_outline_location_on_24" />
+
+                        <TextView
+                            android:layout_marginTop="2dp"
+                            android:id="@+id/person_location"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:textSize="14sp"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:textColor="?attr/tabTextColor"
+                            tools:text="New York, USA"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <include layout="@layout/divider_horizontal"/>
+
+                    <TextView
+                        android:id="@+id/person_description"
+                        android:autoLink="web"
+                        android:textAlignment="viewStart"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="?attr/tabTextColor"
+                        />
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+    </FrameLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?attr/colorPrimary"
+    android:foreground="@drawable/state_pressed_ripple_no_corners"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/icon_frame"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:background="?attr/colorPrimary"
+                app:cardCornerRadius="28dp">
+
+                <ImageView
+                    android:id="@+id/author_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="?attr/colorPrimary"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/cat" />
+            </androidx.cardview.widget.CardView>
+
+
+
+
+            <ImageView
+                android:id="@+id/icon_back"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="?attr/colorPrimary"
+                android:src="@drawable/category_background" />
+
+
+        </FrameLayout>
+
+
+        <TextView
+            android:id="@+id/author_name"
+            android:layout_marginTop="-6dp"
+            android:layout_marginStart="16dp"
+            android:textAlignment="viewStart"
+            android:layout_alignTop="@id/icon_frame"
+            android:layout_toEndOf="@id/icon_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Donald Trump"
+            android:textSize="18sp"
+            android:textColor="?attr/colorAccent"
+            />
+
+        <TextView
+            android:id="@+id/comment_text"
+            android:textAlignment="viewStart"
+            android:layout_alignStart="@id/author_name"
+            android:layout_below="@id/author_name"
+            android:layout_toEndOf="@id/icon_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="A simple comment to photo. A simple comment to photo. A simple comment to photo."
+            android:textColor="?attr/titleTextColor"
+            />
+
+        <TextView
+            android:id="@+id/comment_time_value"
+            android:layout_alignStart="@id/comment_text"
+            android:layout_below="@id/comment_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="40"
+            android:textColor="@color/colorGreyLight"
+            />
+
+        <TextView
+            android:id="@+id/comment_time_label"
+            android:layout_marginStart="4dp"
+            android:layout_below="@id/comment_text"
+            android:layout_toEndOf="@id/comment_time_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/minutes_ago"
+            android:textColor="@color/colorGreyLight"
+            />
+
+<!--        <TextView-->
+<!--            android:id="@+id/abuse_button"-->
+<!--            android:layout_below="@id/comment_text"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            tools:text="report abuse/block"-->
+<!--            android:text="report abuse/block"-->
+<!--            android:textColor="@color/colorGreyLight"-->
+<!--            />-->
+
+        <ImageButton
+            android:paddingTop="7dp"
+            android:id="@+id/block_button"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_baseline_block_24"
+            android:layout_below="@id/comment_text"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@id/comment_time_label"
+            android:layout_alignBottom="@+id/comment_time_label"
+            android:background="@color/colorTransparent"
+            />
+
+        <ImageButton
+            android:paddingTop="7dp"
+            android:layout_marginEnd="20dp"
+            android:id="@+id/report_button"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_outline_thumb_down_24"
+            android:layout_below="@id/comment_text"
+            android:layout_toStartOf="@id/block_button"
+            android:layout_alignTop="@id/comment_time_label"
+            android:layout_alignBottom="@+id/comment_time_label"
+            android:background="@color/colorTransparent"
+            />
+
+
+
+
+        <View android:id="@+id/divider"
+            android:layout_marginTop="12dp"
+            android:layout_below="@id/comment_time_label"
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:background="?attr/subtitleTextColor">
+        </View>
+    </RelativeLayout>
+
+</LinearLayout>
+

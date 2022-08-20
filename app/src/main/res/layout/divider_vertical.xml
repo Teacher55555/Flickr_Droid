@@ -1,0 +1,10 @@
+<View android:id="@+id/divider"
+    android:layout_width="0.3dp"
+    android:layout_height="match_parent"
+    android:background="?attr/subtitleTextColor"
+    app:layout_scrollFlags="scroll|enterAlways"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+</View>
+
+

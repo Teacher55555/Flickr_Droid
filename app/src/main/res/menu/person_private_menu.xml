@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--    <item-->
+    <!--        android:id="@+id/app_bar_close"-->
+    <!--        android:title="@string/menu"-->
+    <!--        android:icon="@drawable/ic_baseline_close_24"-->
+    <!--        app:showAsAction="always"-->
+    <!--        android:visible="false"-->
+    <!--        tools:ignore="AlwaysShowAction" />-->
+
+    <!--    <item-->
+    <!--        android:visible="false"-->
+    <!--        android:id="@+id/app_bar_calendar"-->
+    <!--        android:icon="@drawable/icon_calendar_seearch_action_menu"-->
+    <!--        android:title="@string/calendar"-->
+    <!--        app:showAsAction="always" />-->
+
+    <item
+        android:id="@+id/app_bar_calendar"
+        android:icon="@drawable/icon_calendar_seearch_action_menu"
+        android:title="@string/search"
+
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/app_bar_map"
+        android:title="@string/menu"
+        android:icon="@drawable/icon_map_search_filled"
+        app:showAsAction="always" />
+
+<!--    <item-->
+<!--        android:id="@+id/app_bar_menu_button"-->
+<!--        android:title="@string/menu"-->
+<!--        android:icon="@drawable/icon_menu"-->
+<!--        app:showAsAction="always" />-->
+</menu>
+
+    <!--    app:actionViewClass="androidx.appcompat.widget.SearchView"-->

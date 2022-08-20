@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/drawer_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    >
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        >
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                app:expandedTitleGravity="center_horizontal|top"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentScrim="?attr/colorPrimary"
+                >
+
+
+                <ImageView
+                    app:layout_collapseMode="parallax"
+                    android:id="@+id/item_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:src="@drawable/cat"
+                    />
+
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/fake_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"/>
+
+                <View
+                    android:id="@+id/toolbar_background"
+                    android:alpha="0.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:layout_collapseMode="parallax"
+                    android:background="?attr/colorPrimary"/>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    app:navigationIcon="@drawable/icon_home_arrow_user_page_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:contentInsetStartWithNavigation="0dp"
+                    app:layout_scrollFlags="scroll|enterAlways"
+                    android:theme="@style/CommonMenuStyle"
+                    app:layout_collapseMode="parallax"
+                    app:menu="@menu/common_menu">
+
+                    <TextView
+                        android:id="@+id/item_title"
+                        app:navigationIcon="@drawable/icon_home_arrow_user_page_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="1"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textColor="?attr/tabSelectedTextColor"
+                        tools:text="Donald Trump" />
+
+                </androidx.appcompat.widget.Toolbar>
+
+
+
+
+                <com.google.android.material.tabs.TabLayout
+                    app:tabPaddingTop="18dp"
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom"
+                    app:layout_collapseMode="none"
+                    app:layout_scrollFlags="noScroll"
+                    app:tabTextAppearance="@style/TextAppearance.Design.My"
+                    app:tabMode="auto"
+                    app:tabMaxWidth="0dp"
+                    app:tabGravity="fill"
+                    app:tabTextColor="?attr/tabTextColor"
+                    android:background="@drawable/user_personal_page_tab_background"
+                    app:tabRippleColor="@null">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/user_camera_roll" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/user_public" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/user_albums" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/user_galleries" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/user_groups" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/user_about" />
+
+                </com.google.android.material.tabs.TabLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+<!--            <include layout="@layout/divider_horizontal"/>-->
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        </androidx.viewpager2.widget.ViewPager2>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="?attr/colorPrimary"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@null"
+        app:menu="@null">
+        <include layout="@layout/menu_side_screen"/>
+    </com.google.android.material.navigation.NavigationView>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

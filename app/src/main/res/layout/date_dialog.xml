@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DatePicker xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/date_dialog"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:datePickerMode="spinner"
+    android:calendarViewShown="false"
+    android:theme="@style/SpinnerStyle"
+    android:descendantFocusability="blocksDescendants"
+    android:focusableInTouchMode="false"
+    android:focusedByDefault="false"
+    android:focusable="false"
+    android:clickable="false"
+    android:inputType="date">
+
+<!--    <EditText-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:autofillHints="sd"-->
+<!--        android:inputType="none"-->
+<!--        tools:ignore="LabelFor">-->
+
+<!--    </EditText>-->
+
+</DatePicker>

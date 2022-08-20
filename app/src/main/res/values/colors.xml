@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorBlueFlickr">#0062DD</color>
+    <color name="colorPinkFlickr">#FF0084</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorCertain">#131313</color>
+    <color name="colorGreyDark">#1C1C1C</color>
+    <color name="colorGreyLight">#838383</color>
+    <color name="colorLightGrey">#E3E3E3</color>
+    <color name="colorTabGrey">#CFCFCF</color>
+    <color name="colorDivideAndInactivWhiteTheme">#D5D5D5</color>
+    <color name="colorDivideAndInactivDarkTheme">#353535</color>
+    <color name="colorTransparent">#00838383</color>
+    <color name="colorRippleDarkTheme">#1A000000</color>
+    <color name="colorRippleLightTheme">#1AFFFFFF</color>
+    <color name="colorRed">#80B00020</color>
+    <color name="colorDelRed">#B00020</color>
+    <color name="colorGreen">#80008C54</color>
+    <color name="colorBlackAlpha50">#80000000</color>
+    <color name="colorBlackAlpha60">#99000000</color>
+    <color name="colorBlackAlpha70">#B2000000</color>
+    <color name="colorBlackAlpha80">#CC000000</color>
+    <color name="colorRippleLight">#AFAFAF</color>
+    <color name="colorRippleDark">#4B4B4B</color>
+    <color name="colorPersonalPageLight">#404040</color>
+    <color name="colorPersonalPageDark">#B5B5B5</color>
+</resources>
+

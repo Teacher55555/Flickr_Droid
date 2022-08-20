@@ -1,0 +1,273 @@
+<resources>
+    <string name="app_name">Flickr Droid</string>
+    <string name="intro_version_1_10">Привет! Наступает весна и пора снять шапку с логотипа! 🙂\n\nЕсли вы нашли ошибку пожалуйста сообщите о ней подробно на supflickrdroid@gmail.com\n\nА если вам понравилось приложение, пожалуйста поддержите его, поставив оценку.\n\nСпасибо!</string>
+<!--    <string name="intro_version_1_14">Привет!\n\nFlickr Droid постоянно совершенствуется, поэтому если вы нашли ошибку или у вас есть вопросы/предложения свяжитесь со мной через supflickrdroid@gmail.com\n\nА если вам понравилось приложение, пожалуйста поддержите его, поставив оценку.\n\nСпасибо!🙂</string>-->
+    <string name="intro_version_2_0">Привет!\n\nВстречайте версию 2.0! В этой версии ускорена загрузка фотографий, перерисован интерфейс, добавлены фильтры поиска, утсранены ошибки и многое другое! Полный перечень изменений вы можете найти в разделе \"О приложении\".Если у вас есть ошибки/предложения пожалуйста свяжитесь со мной по почте: supflickrdroid@gmail.com\n\nЕсли вам понравилось приложение пожалуста поддержите его оценив в гугл плей!\n\nСпасибо!</string>
+    <string name="intro_header1">Привет!</string>
+    <string name="intro_description1">Приложение поддерживает 2 режима работы, с авторизацией и без авторизации</string>
+    <string name="intro_header2">Авторизация</string>
+    <string name="intro_description2">✓ доступ к персональной странице\n✓ доб./удал. комментариев\n✓ доб./удал. избранных фото\n✓ доб. фото в альбомы/группы\n✓ управление приватностью фото</string>
+    <string name="intro_header3">Главное меню</string>
+    <string name="intro_description3">"Вы всегда можете авторизоваться вытянув главное меню справа и нажать на аватар. После авторизации, нажатие на аватарку будет открывать вашу персональную страницу."</string>
+    <string name="intro_header4">Гибкий поиск</string>
+    <string name="intro_description4">1 - лучшие фото на определенную дату\n2 - поиск фотографий, групп, пользователей\n3 - поиск фото на карте\n4 - поиск фото по категориям</string>
+    <string name="intro_header5">Поиск на карте</string>
+    <string name="intro_description5">Потяните вверх за антенну логотипа, чтобы выдвинуть панель настроек. При необходимости, фото можно сдвинуть, удерживая на нем палец</string>
+    <string name="intro_header6">Информация о фото</string>
+    <string name="intro_description6">Потяните шторку вверх, чтобы увидеть дополнительную информацию о фото"</string>
+    <string name="intro_header7">Карты Google</string>
+    <string name="intro_description7">"Щелкните на маркер на карте, чтобы показать геолокацию фото на картах Google</string>
+    <string name="intro_header8">Ссылка на Flickr.com</string>
+    <string name="intro_description8">Нажатие на фото профиля (группы, альбома и т.д) приведет к открытию текущей страницы с учетом активной вкладки на сайте Flickr.com в браузере</string>
+    <string name="intro_header9">Фотоплёнка</string>
+    <string name="intro_description9">Здесь вы можете изменить приватность своих фотографий или добавить их в альбом / группу.</string>
+    <string name="intro_header10">Удаление комментариев</string>
+    <string name="intro_description10">"Смахните комментарий влево, чтобы удалить его.</string>
+    <string name="intro_header11">Спасибо!</string>
+    <string name="intro_description11">"Если Вам понравилось приложение, пожалуйста поддержите его, поставив оценку</string>
+    <string name="intro_header12">Фильтр поиска</string>
+    <string name="intro_description12">"Попробуйте альтернативные поисковые фильтры. Фильтр "Релевантный" установлен по умолчанию."</string>
+    <string name="IntroSkip">Х</string>
+    <string name="introFinish">Вперёд!</string>
+    <string name="sing_in">Войти</string>
+    <string name="sing_in_later">Не сейчас</string>
+    <string name="Next">Далее</string>
+    <string name="Back">Назад</string>
+    <string name="login">Войти</string>
+
+    <string name="search_top">Лучшие фото</string>
+    <string name="search_recent">Недавние фото</string>
+    <string name="search_on_map_button_text">Искать на карте %d фото</string>
+    <string name="search_on_map">Искать на карте</string>
+    <string name="search_on_map_near_me">Искать рядом со мной</string>
+
+    <string name="data">20\nDEC\n2020</string>
+    <string name="people">Люди</string>
+    <string name="person">Аккаунт</string>
+    <string name="photo">Фото</string>
+    <string name="groups">Группы</string>
+    <string name="date_dialog_title">Лучшие фото за:</string>
+    <string name="search_date_title_result">""</string>
+
+    <string name="pro_flag">PRO</string>
+    <string name="search_photo_hint">Найти</string>
+    <string name="search_user_hint">Аккаунт или e-mail</string>
+    <string name="search_group_hint">Название группы</string>
+
+    <string name="user_has_no_favorites_photos_error">У этого пользователя нет избранных фотографий</string>
+    <string name="interestings_photos_error">Похоже, Flickr.com еще не подготовил ни одной фотографии к этой дате. Попробуйте выбрать дату раньше</string>
+    <string name="map_request_error">Ой! Здесь нет фотографий.\nПопробуйте другой поиск</string>
+    <string name="search_user_error">Ой! Не удалось найти такого пользователя. Напоминаем, что вы можете искать только по точному имени пользователя или электронной почте. Попробуйте другой поиск</string>
+    <string name="search_photos_error">Упс!\nФотографии не найдены. Попробуйте другой поиск</string>
+    <string name="search_groups_error">Упс!\nГруппы не найдены. Попробуйте другой поиск</string>
+    <string name="no_internet_connection_error">Нет подключения к Flickr.com\nПроверьте подключение к Интернету</string>
+    <string name="time_out_error">Слишком долгое ожидание ответа от Flickr.com\nПопробуйте обновить страницу</string>
+    <string name="interestings_date_error">Похоже, по состоянию %s Flickr еще не опубликовал лучшие фото. Попробуйте выбрать другую дату в календаре.</string>
+    <string name="comment_delete_error">У Вас нет разрешнения на удаление этого комментария.</string>
+    <string name="internet_connection_error">Ой! Что то пошло не так. Пожалуйста попробуйте снова.</string>
+    <string name="request_error">Ой! Эта страница не может быть найдена. Попробуйте изменить запрос.</string>
+    <string name="photos_error">Ой! Тут не фото.</string>
+    <string name="user_has_no_photos_error">Этот пользователь не имеет публичных фото.</string>
+    <string name="user_has_no_followings_error">"Этот пользователь не имеет подписок"</string>
+    <string name="user_has_no_albums_error">Этот пользователь не имеет альбомов.</string>
+    <string name="user_has_no_galleries_error">Этот пользователь не имеет галерей.</string>
+    <string name="group_has_private_photos_error">Вы не состоите в группе. Группа содержит приватные фото.</string>
+    <string name="user_has_no_groups_error">Этот пользователь не состоит ни в одной группе.</string>
+    <string name="no_comments">Здесь пока нет комментариев.</string>
+    <string name="data_receive_fail">Ошибка получения данных. Пожалуйста попробуйте снова.</string>
+
+    <string name="internet_connection_error_map">Что то пошло не так</string>
+    <string name="request_error_map">Плохой запрос</string>
+
+    <string name="public_photos">Публичные фото</string>
+    <string name="location">Местонахождение</string>
+    <string name="first_posted_photo_date">Первое фото опубликовано</string>
+
+    <string name="members">Участники</string>
+    <string name="photos">Фото</string>
+    <string name="topics">Дискуссии</string>
+    <string name="views">Просмотры</string>
+
+    <string name="group_list_private">P\nR\nI\nV\nA\nT\nE</string>
+    <string name="group_list_invite">I\nN\nV\nI\nT\nE</string>
+    <string name="group_list_public">P\nU\nB\nL\nI\nC</string>
+    <string name="group_text_private">приватная</string>
+    <string name="group_text_invite">по приглашению</string>
+    <string name="group_text_public">публичная</string>
+
+
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="GPS_OFF_warning">Кажется, ваш GPS отключен, вы хотите его включить?</string>
+    <string name="location_access_deny_warning">Чтобы искать фотографии рядом с вашим местоположением, вам необходимо разрешить Flickr Droid доступ к местоположению этого устройства.</string>
+    <string name="worldwide">По всему миру</string>
+    <string name="near_me">Рядом со мной</string>
+    <string name="cancel">Отмена</string>
+    <string name="download_start">Скачивание началось…</string>
+    <string name="search_blank_warning">Поле поиска не должно быть пустым.</string>
+
+    <string name="user_public">Публичные</string>
+    <string name="user_albums">Альбомы</string>
+    <string name="user_groups">Группы</string>
+    <string name="user_galleries">Галереи</string>
+    <string name="user_favorites">Избранное</string>
+    <string name="user_about">Об аккаунте</string>
+    <string name="user_camera_roll">Фотопленка</string>
+    <string name="original_link">Оригинальная ссылка:\n</string>
+
+    <string name="photo_privacy_public">Публичное</string>
+    <string name="photo_privacy_private">Закрытое</string>
+    <string name="photo_privacy_friends">Друзья</string>
+    <string name="photo_privacy_family">Семья</string>
+    <string name="photo_privacy_family_friends">Друзья и семья</string>
+
+    <string name="group_photos">Фото</string>
+    <string name="group_description">Описание</string>
+
+    <string name="download_access_warning">Чтобы загружать фотографии на устройство, необходимо разрешить доступ к хранилищу.</string>
+    <string name="storage_access_warning">Чтобы поделиться фотографией, сначала необходимо загрузить ее на устройство, а для этого требуется разрешение на доступ к хранилищу.</string>
+    <string name="slide_show_started">Слайд-шоу началось с %d секундным интервалом. Чтобы остановить, коснитесь экрана.</string>
+    <string name="slide_show_stopped">Слайд-шоу остановлено.</string>
+
+    <string name="comments">Комментарии</string>
+    <string name="date">Создан</string>
+    <string name="contacts">Контакты</string>
+    <string name="personal_page_favorites">Избранное</string>
+    <string name="personal_page_followings">Лента</string>
+    <string name="personal_page_cameraRoll">Фотопленка</string>
+    <string name="personal_page_public">Публичные</string>
+    <string name="personal_page_albums">Альбомы</string>
+    <string name="personal_page_gallery">Галереи</string>
+    <string name="personal_page_groups">Группы</string>
+    <string name="personal_page_about">Об аккаунте</string>
+    <string name="years_ago">лет назад</string>
+    <string name="years_2_4_ago">года назад</string>
+    <string name="year_ago">год назад</string>
+    <string name="months_ago">мес. назад</string>
+    <string name="month_ago">мес. назад</string>
+    <string name="days_ago">дн. назад</string>
+    <string name="day_ago">дн. назад</string>
+    <string name="hours_ago">ч. назад</string>
+    <string name="hour_ago">ч. назад</string>
+    <string name="minutes_ago">мин. назад</string>
+    <string name="minute_ago">мин. назад</string>
+    <string name="seconds_ago">сек. назад</string>
+    <string name="second_ago">сек. назад</string>
+    <string name="now">сейчас</string>
+    <string name="personal_page">Персональная страница</string>
+
+    <string name="photo_not_yet_loaded">Пожалуйста дождитесь загрузки фото!</string>
+    <string name="private_message">Группа ПРИВАТНАЯ! Доступ запрещен!</string>
+
+    <string name="group_default_description">Эта группа не содержит описания.</string>
+    <string name="group_default_rules">Для этой группы нет правил. Администратор этой группы не установил никаких правил.</string>
+
+    <string name="photo_quantity">Количество:</string>
+    <string name="loading">Загрузка…</string>
+    <string name="max_photo_on_the_map">Макс: %d</string>
+    <string name="max">Макс:</string>
+    <string name="keywords">Ключевые слова:</string>
+    <string name="title_activity_maps">Карта</string>
+    <string name="map_search_hint">По умолчанию показывает лучшие фото</string>
+    <string name="camera_title_lens">Линза</string>
+    <string name="camera_title_aperture">Диафрагма</string>
+    <string name="camera_title_focal_length">Фокусное расстояние</string>
+    <string name="camera_exposure_title">Экспозиция</string>
+    <string name="camera_title_iso">ISO</string>
+    <string name="comment_hint">Написать коменнатрий…</string>
+    <string name="gallery_view">Тип просмотра галереи</string>
+    <string name="picture_show_quality">Качество показа изображений</string>
+    <string name="quality_640_small">640\n мал.</string>
+    <string name="quality_800_small">800\n сред.</string>
+    <string name="quality_1024_medium">1024\n сред.</string>
+    <string name="quality_2048_large">2048\n бол.</string>
+    <string name="download_picture_quality">Качество скачиваемой картинки</string>
+    <string name="max_quality">Макс.\nкачество</string>
+    <string name="slide_show_duration">Продолжительность слайд-шоу</string>
+    <string name="slideshow_3_sec">3 сек.</string>
+    <string name="slideshow_4_sec">4 сек.</string>
+    <string name="slideshow_5_sec">5 сек.</string>
+    <string name="slideshow_10_sec">10 сек.</string>
+    <string name="slideshow_15_sec">15 сек.</string>
+    <string name="slideshow_20_sec">20 сек.</string>
+    <string name="theme">Тема</string>
+    <string name="default_theme">По умол.</string>
+    <string name="light">Светлая</string>
+    <string name="dark">Темная</string>
+    <string name="history_switch">Сохранять историю поиска</string>
+    <string name="cash_switch">Очищать кэш при выходе</string>
+    <string name="about">О приложении</string>
+    <string name="privacy_policy">Политика конфиденциальности (управляется Flickr.com)</string>
+    <string name="refresh">Обновить</string>
+    <string name="title_activity_oauth">OauthActivity</string>
+    <string name="redirect_to_flickr_message">https://www.flickr.com</string>
+    <string name="redirect_to_app_message">Flickr Droid</string>
+    <string name="oauth_title">Перенаправляем на:</string>
+    <string name="please_wait">Пожалуйста ждите…</string>
+    <string name="back_to_app">Обратно в приложение</string>
+    <string name="search_photos">Поиск фото</string>
+    <string name="show_intro">Инструкция</string>
+    <string name="rate_the_app">Оценить</string>
+    <string name="settings">Настройки</string>
+    <string name="photoLocation">%1$s, %2$s, %3$s</string>
+
+    <string name="sort_date_posted_asc">дата публикации (по возрастанию)</string>
+    <string name="sort_date_posted_desc">дата публикации (по убыванию)</string>
+    <string name="sort_date_taken_asc">дата съемки (по возрастанию)</string>
+    <string name="sort_date_taken_desc">дата съемки (по убыванию)</string>
+    <string name="sort_interestingness_asc">интересные фото (по возрастанию)</string>
+    <string name="sort_interestingness_desc">интересные фото (по убыванию)</string>
+    <string name="sort_relevance">релевантные фото</string>
+
+    <string name="photos_not_added_to_album">Из-за потери связи с сервером одна или несколько фотографий не были добавлены в альбом.</string>
+    <string name="photos_added_to_album">Фотографии успешно добавлены в альбом.</string>
+    <string name="photos_not_added_to_group_internet">Из-за потери связи с сервером одна или несколько фотографий не были добавлены в группу.</string>
+    <string name="photos_not_added_to_group">Одна или несколько фотографий не были добавлены в группу. Посмотрите описание группы.</string>
+    <string name="photos_added_to_group">Фотографии успешно добавлены в группу.</string>
+    <string name="no_selected_photo_for_add_group_album">Вы должны выбрать хотя бы одну фотографию, чтобы добавить ее в альбом или группу.</string>
+
+    <string name="no_thanks">Нет, спасибо</string>
+    <string name="yes_please">Да, пожалуйста</string>
+    <string name="receiving_photos_from_flickr">Получение фотографий от Flickr</string>
+    <string name="add_photos_to_the_map">Добавление %d фотографий на карту\Пожалуйста, подождите…</string>
+
+    <string name="photos_selected">Выбрано фотографий: %d</string>
+    <string name="back_to_exit">Нажмите НАЗАД еще раз, чтобы выйти</string>
+
+    <string name="you_are_here">"Вы уже здесь"</string>
+    <string name="history_hint">Здесь будет храниться история поиска. Вы можете отключить его в настройках, если хотите.</string>
+    <string name="history_off">История поиска в настоящее время отключена. Вы можете включить его в настройках, если хотите.</string>
+    <string name="list_of_changes">Список изменений</string>
+    <string name="groups_link_warning">Вы должны быть авторизованы, чтобы увидеть группы пользователя</string>
+
+    <string name="log_in_header_1">Пожалуйста ознакомьтесь</string>
+    <string name="log_in_header_2">1 - Войдите под своей учетной записью</string>
+    <string name="log_in_header_3">2 - Авторизуйте Flickr Droid</string>
+
+    <string name="log_in_description_1">Авторизация проходит в 2 этапа. Это нужно будет сделать только один раз.</string>
+    <string name="log_in_description_2">Вы будете перенаправлены на сайт Flickr.com. Далее, авторизуйтесь под своей учетной записью.</string>
+    <string name="log_in_description_3">Теперь вам нужно разрешить программе Flickr Droid доступ к вашим фотографиям.</string>
+
+    <string name="lock_person">Вы больше не будете видеть комментраии от  этого пользователя в приложении Flickr Droid. Для разблокировки нажмите на иконку \"замок\" на панели инструментов.</string>
+    <string name="report_photo">Сообщить о нарушении</string>
+    <string name="self_block_warning">вы не можете заблокировать сами себя</string>
+    <string name="empty_block_list_message">вы пока ещё никого не заблокировали</string>
+    <string name="blocked_list">Спам лист</string>
+
+    <string name="menu_instruction">Инструкция</string>
+    <string name="own_photo_fave_warning">Вы не можете добавить в избранное ваше собственное фото.</string>
+    <string name="not_singed_up_warning">Вы должны быть авторизированны.</string>
+    <string name="_1">1</string>
+    <string name="quantity_of_photos_on_the_map">Количество фотографий на карте:</string>
+    <string name="calculating_message">Ждите…</string>
+    <string name="error">ошибка</string>
+    <string name="cache_size_tap_to_clear">Размер кэша (очистить)</string>
+    <string name="reset">Сброс</string>
+    <string name="app_version">Версия приложения: %s</string>
+    <string name="menu">menu</string>
+    <string name="calendar">calendar</string>
+    <string name="search">Search</string>
+    <string name="text_of_changes">- ускорена загрузка фотографий\n\n- поиск теперь имеет фильтры\n\n- добавлена история поиска\n\n- у авторизованных пользователей теперь есть возможность добавления фото в альбомы и группы\n\n- убран раздел \"Недавние фото\"\n\n- перерисован интерфейс\n\n- повышена общая стабильность работы приложения\n\n- добавлена поддержка устройств на арабском языке</string>
+
+
+</resources>

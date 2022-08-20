@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/app_bar_close"
+        android:title="@string/menu"
+        android:icon="@drawable/ic_baseline_close_24"
+        app:showAsAction="always"
+        android:visible="false"
+        />
+
+    <item
+
+        android:id="@+id/app_bar_calendar"
+        android:icon="@drawable/icon_calendar_seearch_action_menu"
+        android:title="@string/calendar"
+        android:tint="?attr/tabIconTint"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/app_bar_search_button"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="@string/search"
+        app:showAsAction="always"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+    <item
+        android:id="@+id/app_bar_menu_button"
+        android:title="@string/menu"
+        android:icon="@drawable/icon_menu"
+        app:showAsAction="always"
+        />
+
+</menu>

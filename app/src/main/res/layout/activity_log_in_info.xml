@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    tools:context=".ui.activities.LogInActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activities.LogInActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_margin="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/text_field_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textAlignment="textStart"
+                android:textColor="?attr/colorAccent"
+                android:theme="@style/Text.Title.H6"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="1) Вы будете перенаправлены">
+            </TextView>
+
+            <TextView
+                android:id="@+id/text_field_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textAlignment="textStart"
+                android:theme="@style/Text.Title.H4"
+                app:layout_constraintTop_toBottomOf="@id/text_field_1"
+                android:text="1)">
+            </TextView>
+
+            <ImageView
+                android:id="@+id/image1"
+                app:layout_constraintTop_toBottomOf="@id/text_field_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="200dp"
+                android:layout_height="180dp"
+                android:src="@drawable/login1"
+                >
+            </ImageView>
+
+            <TextView
+                android:textColor="?attr/tabTextColor"
+                android:id="@+id/text_field_22"
+                app:layout_constraintTop_toBottomOf="@id/text_field_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/image1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="1) Вы будуте перенаправлены на сайт Flickr.com где вам нужно, авторизоваться с вашей учетной записью фликр. Если вы уже авторизованы вы перейдете к шагу 2. "
+                >
+            </TextView>
+
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:id="@+id/image2"
+                app:layout_constraintTop_toBottomOf="@id/text_field_2"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="200dp"
+                android:layout_height="300dp"
+                android:src="@drawable/login2"
+                >
+            </ImageView>
+
+            <TextView
+                android:textColor="?attr/tabTextColor"
+                android:layout_marginTop="20dp"
+                android:id="@+id/text_field_3"
+                app:layout_constraintTop_toBottomOf="@id/text_field_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/image2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="2) Здесь вам нужно разрешить программе Flickr Droid доступ к вашему контенту нажатием клавиши 'OK, I'LL AUTHORIZE IT'. Обратите внимание, что программа Flickr Droid не будет иметь прав на удаление вашего контента."
+                >
+            </TextView>
+
+            <TextView
+                android:textColor="?attr/tabTextColor"
+                android:textSize="14sp"
+                android:id="@+id/text_field_4"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/image2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/image2"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="12dp"
+                android:text="Это нужно будет сделать только один раз. При следующем запуске Flickr Droid выбудете уже авторизованны"
+                >
+            </TextView>
+
+<!--            <Button-->
+<!--                android:drawableEnd="@drawable/ic_baseline_login_24"-->
+<!--                android:paddingStart="8dp"-->
+<!--                android:paddingEnd="14dp"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/text_field_4"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                android:text="Все понятно, давай уже регистрироваться!"-->
+<!--                android:id="@+id/button"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/search_button_background"-->
+<!--                />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+<!--    <TextView-->
+<!--        android:id="@+id/text_field_1"-->
+<!--        android:paddingBottom="20dp"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="18sp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Регистрация проходит в два этапа:">-->
+
+<!--    </TextView>-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/image1"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/text_field_1"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="180dp"-->
+<!--        android:src="@drawable/login1"-->
+<!--        >-->
+<!--    </ImageView>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/text_field_2"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/text_field_1"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@id/image1"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/image1"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:text="1) Вы будуте перенаправлены на сайт Flickr.com где вам нужно, авторизоваться с вашей учетной записью фликр. Если вы уже авторизованы вы перейдете к шагу 2. "-->
+<!--        >-->
+<!--    </TextView>-->
+
+<!--    <ImageView-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:id="@+id/image2"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/text_field_2"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="300dp"-->
+<!--        android:src="@drawable/login2"-->
+<!--        >-->
+<!--    </ImageView>-->
+
+<!--    <TextView-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:id="@+id/text_field_3"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/text_field_2"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@id/image2"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/image2"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:text="2) Здесь вам нужно разрешить программе Flickr Droid доступ к вашему контенту нажатием клавиши 'OK, I'LL AUTHORIZE IT'. Обратите внимание, что программа Flickr Droid не будет иметь прав на удаление вашего контента."-->
+<!--        >-->
+<!--    </TextView>-->
+
+<!--    <TextView-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/text_field_3"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@id/text_field_3"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Это нужно будет сделать только один раз. При следующем запуске Flickr Droid выбудете уже авторизованны"-->
+<!--        >-->
+<!--    </TextView>-->
+
+<!--    <Button-->
+<!--        android:drawableEnd="@drawable/ic_baseline_login_24"-->
+<!--        android:paddingStart="8dp"-->
+<!--        android:paddingEnd="8dp"-->
+
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:text="Все понятно, давай уже регистрироваться!"-->
+<!--        android:id="@+id/button"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@drawable/search_button_background"-->
+<!--        />-->
+
+    <Button
+        android:drawableEnd="@drawable/ic_baseline_login_24"
+        android:paddingStart="8dp"
+        android:paddingEnd="14dp"
+        app:layout_constraintTop_toBottomOf="@id/text_field_4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Все понятно, давай уже регистрироваться!"
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_button_background"
+        android:layout_gravity="bottom"
+        android:layout_margin="12dp"
+        />
+
+
+</FrameLayout>
