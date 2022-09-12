@@ -182,8 +182,8 @@ class PrivatePersonActivity :
     }
 
     override fun onError(query: Query) {
-        when (query.type) {
-            QueryTypes.MAP -> startActivity(MapActivity.newIntent(this).apply { finish() })
+        if (query.type == QueryTypes.MAP) {
+            startActivity(MapActivity.newIntent(this).apply { finish() })
         }
     }
 

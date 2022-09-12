@@ -13,6 +13,7 @@ import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.armageddon.android.flickrdroid.R
 import com.armageddon.android.flickrdroid.common.LogoIcon
@@ -36,7 +37,6 @@ class LoadingMapFragment : DialogFragment(), View.OnClickListener {
     var mErrorMessage: TextView? = null
     var mBitmaps = mutableMapOf<Photo, Bitmap>()
     var stopJob = false
-
 
     override fun onClick(v: View?) {
         stopJob = true
@@ -159,5 +159,8 @@ class LoadingMapFragment : DialogFragment(), View.OnClickListener {
             .setView(v)
             .show()
     }
+
+
+
 
 }

@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.armageddon.android.flickrdroid.common.HistoryType
 import com.armageddon.android.flickrdroid.model.HistoryElement
+import retrofit2.http.DELETE
 import java.util.*
 
 @Dao

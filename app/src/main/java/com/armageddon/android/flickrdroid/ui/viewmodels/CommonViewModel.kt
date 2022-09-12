@@ -48,8 +48,7 @@ class CommonViewModel : ViewModel() {
 
     suspend fun getPerson (userId: String) : FlickrResponse<Person> {
         val response : FlickrResponse<Person> = try {
-            commonRepository.
-            getPerson(userId)
+            commonRepository.getPerson(userId)
         } catch (e : UnknownHostException) {
             FlickrResponse(stat = RESPONSE_DATA_FAIL)
         } catch (e : InterruptedIOException) {
@@ -124,6 +123,19 @@ class CommonViewModel : ViewModel() {
         }
     }
 
+//    suspend fun getGroupInfo(query: Query) : FlickrResponse<GroupInfo> {
+//        val response : FlickrResponse<GroupInfo> = try {
+//            commonRepository.fetchGroupInfo(query)
+//        } catch (e : UnknownHostException) {
+//            FlickrResponse(stat = RESPONSE_DATA_FAIL)
+//        } catch (e : InterruptedIOException) {
+//            FlickrResponse(stat = RESPONSE_DATA_FAIL)
+//        } catch (e: Exception) {
+//            FlickrResponse(stat = RESPONSE_DATA_FAIL)
+//        }
+//        return response
+//    }
+
     suspend fun getGroupInfo(query: Query) : FlickrResponse<GroupInfo> {
         val response : FlickrResponse<GroupInfo> = try {
             commonRepository.fetchGroupInfo(query)
@@ -135,11 +147,6 @@ class CommonViewModel : ViewModel() {
             FlickrResponse(stat = RESPONSE_DATA_FAIL)
         }
         return response
-
-
     }
-
-
-
 
 }

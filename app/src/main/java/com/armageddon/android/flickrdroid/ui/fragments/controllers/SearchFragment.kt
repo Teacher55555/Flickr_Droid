@@ -33,11 +33,11 @@ private const val SEARCH_TAG = "search_tag"
 private const val KEYBOARD_KEY = "keyboard_key"
 
 class SearchFragment : Fragment() {
-   private var _binding : FragmentSearchBinding? = null
-   private val binding get() = _binding!!
+    private var _binding : FragmentSearchBinding? = null
+    private val binding get() = _binding!!
     private val viewModel: HistoryViewModel by activityViewModels()
-   private val offScreenPageLimit = 3
-   private var currentPagerPosition = 1
+    private val offScreenPageLimit = 3
+    private var currentPagerPosition = 1
     private var mSearchTag = ""
     private var mOpenKeyboard = true
 

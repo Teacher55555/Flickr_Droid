@@ -11,7 +11,6 @@ private const val DATABASE_NAME = "history-database"
 
 class HistoryRepository(context: Context) {
 
-
     companion object {
         private var INSTANCE: HistoryRepository? = null
 
