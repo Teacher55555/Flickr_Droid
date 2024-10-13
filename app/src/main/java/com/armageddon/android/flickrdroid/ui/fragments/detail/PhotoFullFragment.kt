@@ -1,6 +1,7 @@
 package com.armageddon.android.flickrdroid.ui.fragments.detail
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.DownloadManager
 import android.content.ContentValues
 import android.content.Context
@@ -319,6 +320,7 @@ class PhotoFullFragment : Fragment() {
             }
         }
 
+        @SuppressLint("SuspiciousIndentation")
         override fun bind(item: Photo) {
             Glide.with(itemView)
                 .load(item.getPhotoUrl())
@@ -656,6 +658,7 @@ class PhotoFullFragment : Fragment() {
             }
         }
 
+        @SuppressLint("SuspiciousIndentation")
         override fun onPanelStateChanged(
             panel: View?,
             previousState: SlidingUpPanelLayout.PanelState?,
@@ -758,7 +761,7 @@ class PhotoFullFragment : Fragment() {
         private val bindingHolder: FragmentPhotoFullBinding,
         private val animateUI: (Boolean) -> Unit
     ) : GestureDetector.OnDoubleTapListener {
-        override fun onSingleTapConfirmed(e: MotionEvent?): Boolean {
+        override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
             animateUI(mPhotoInfoVisible)
             if (this@PhotoFullFragment::mJob.isInitialized && mJob.isActive) {
                 mJob.cancel()
@@ -770,7 +773,7 @@ class PhotoFullFragment : Fragment() {
             return false
         }
 
-        override fun onDoubleTap(e: MotionEvent?): Boolean {
+        override fun onDoubleTap(e: MotionEvent): Boolean {
             bindingHolder.photoDetailView.apply { when(scale != DOUBLE_TAP_SCALE) {
                 true -> setScale(DOUBLE_TAP_SCALE, true)
                 else -> setScale(bindingHolder.photoDetailView.minimumScale, true)
@@ -778,8 +781,7 @@ class PhotoFullFragment : Fragment() {
             return false
         }
 
-        override fun onDoubleTapEvent(e: MotionEvent?) = false
-
+        override fun onDoubleTapEvent(e: MotionEvent) = false
     }
 
     private inner class PhotoLoadListener(

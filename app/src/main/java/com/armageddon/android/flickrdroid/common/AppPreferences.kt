@@ -24,6 +24,7 @@ private const val USER_ICON_FARM = "user_icon_farm"
 private const val USER_ICON_URL = "user_icon_url"
 private const val WELCOME_MESSAGE = "message"
 private const val WELCOME_MESSAGE_2 = "message_2"
+private const val WELCOME_MESSAGE_3 = "message_3"
 private const val RECENT_GALLERY = "recent_gallery"
 private const val CATEGORY_FILTER_POSITION = "category_filter_position"
 private const val CALENDAR_DATE = "calendar_date"
@@ -77,14 +78,14 @@ object AppPreferences {
             .getBoolean(WELCOME_MESSAGE, false)
     }
 
-    fun setWelcomeMessage2IsShown(context: Context) {
+    fun setWelcomeMessage3IsShown(context: Context) {
         PreferenceManager.getDefaultSharedPreferences(context)
-            .edit { putBoolean(WELCOME_MESSAGE_2, true) }
+            .edit { putBoolean(WELCOME_MESSAGE_3, true) }
     }
 
-    fun isWelcomeMessage2Shown(context: Context): Boolean {
+    fun isWelcomeMessage3Shown(context: Context): Boolean {
         return PreferenceManager.getDefaultSharedPreferences(context)
-            .getBoolean(WELCOME_MESSAGE_2, false)
+            .getBoolean(WELCOME_MESSAGE_3, false)
     }
 
     fun setIntroShown(context: Context, isShown: Boolean) {

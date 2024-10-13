@@ -1,7 +1,6 @@
 package com.armageddon.android.flickrdroid.model
 
 import android.content.Context
-import android.location.Address
 import android.location.Geocoder
 import com.armageddon.android.flickrdroid.common.*
 import com.armageddon.android.flickrdroid.network.responses.FlickrResponse
@@ -89,15 +88,15 @@ data class Photo  (
         countFaves = count.toString()
     }
 
-    fun getLocation(context: Context?): String? {
-        val addresses: List<Address>
+    fun getLocation(context: Context): String? {
+//        val addresses: List<Address>
         val geocoder = Geocoder(context, Locale.getDefault())
         return try {
             // Here 1 represent max location result to returned, by documents it recommended 1 to 5
-            addresses = geocoder.getFromLocation(latitude, longitude, 1)
-            val city = addresses[0].locality
-            val state = addresses[0].adminArea
-            val country = addresses[0].countryName
+           val addresses = geocoder.getFromLocation(latitude, longitude, 1)
+            val city = addresses?.get(0)?.locality
+            val state = addresses?.get(0)?.adminArea
+            val country = addresses?.get(0)?.countryName
             var str: String? = ""
             if (city != null) {
                 str = "$city, "

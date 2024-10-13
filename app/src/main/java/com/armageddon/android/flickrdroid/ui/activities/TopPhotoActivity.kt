@@ -7,8 +7,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.armageddon.android.flickrdroid.R
-import com.armageddon.android.flickrdroid.common.AppPreferences.isWelcomeMessage2Shown
-import com.armageddon.android.flickrdroid.common.AppPreferences.setWelcomeMessage2IsShown
+import com.armageddon.android.flickrdroid.common.AppPreferences.isWelcomeMessage3Shown
+import com.armageddon.android.flickrdroid.common.AppPreferences.setWelcomeMessage3IsShown
 import com.armageddon.android.flickrdroid.ui.fragments.controllers.TopPhotoFragment
 
 private const val OFFSCREEN_PAGE_LIMIT = 2
@@ -31,13 +31,13 @@ class TopPhotoActivity : SingleFragmentActivity(), TopPhotoFragment.CallBacks {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (!isWelcomeMessage2Shown(this)) {
+        if (!isWelcomeMessage3Shown(this)) {
             val builder = AlertDialog.Builder(this)
-            builder.setMessage(getString(R.string.intro_version_2_0))
+            builder.setMessage(getString(R.string.intro_version_2_1))
                 .setPositiveButton("Ok") { dialog: DialogInterface, id: Int -> dialog.cancel() }
             val alert = builder.create()
             alert.show()
-            setWelcomeMessage2IsShown(this)
+            setWelcomeMessage3IsShown(this)
         }
     }
 

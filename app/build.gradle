@@ -11,14 +11,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 32
-
     defaultConfig {
         applicationId "com.armageddon.android.flickrdroid"
         minSdkVersion 27 //27
-        targetSdkVersion 32
-        versionCode 55
-        versionName "2.2"
+        targetSdkVersion 35
+        compileSdk 35
+        versionCode 57
+        versionName "2.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -44,6 +43,7 @@ android {
     testOptions {
         unitTests.returnDefaultValues = true
     }
+    namespace 'com.armageddon.android.flickrdroid'
 }
 
 dependencies {

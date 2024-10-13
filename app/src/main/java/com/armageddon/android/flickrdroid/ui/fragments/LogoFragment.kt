@@ -13,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
 import android.view.animation.DecelerateInterpolator
+import androidx.core.animation.addListener
 import androidx.fragment.app.Fragment
 import com.armageddon.android.flickrdroid.R
 import com.armageddon.android.flickrdroid.databinding.FragmentLogoBinding
@@ -285,12 +286,9 @@ class LogoFragment : Fragment() {
             start()
         }
 
-        eyeBlink2TimesUpAnimationSet.addListener(object : AnimatorListenerAdapter() {
-            override fun onAnimationEnd(animation: Animator?) {
-                callBacks?.onLogoAnimationEnd()
-            }
-        })
-
+        eyeBlink2TimesUpAnimationSet.addListener(
+            onEnd = { callBacks?.onLogoAnimationEnd() }
+        )
     }
 }
 

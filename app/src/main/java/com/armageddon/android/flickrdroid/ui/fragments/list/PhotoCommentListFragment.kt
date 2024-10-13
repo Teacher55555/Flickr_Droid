@@ -169,7 +169,7 @@ class PhotoCommentListFragment : MenuFragment() {
                 }
                 when (response.stat) {
                     RESPONSE_DATA_OK -> {
-                        mCommentsList = response.dataArray.reversed().toMutableList()
+                        mCommentsList = response.dataArray.asReversed().toMutableList()
                         val blockedPersonsId = mBlockedList.map { it.id }
                         mCommentsList.removeAll { it.author in blockedPersonsId }
                         mAdapter.submitList(mCommentsList)

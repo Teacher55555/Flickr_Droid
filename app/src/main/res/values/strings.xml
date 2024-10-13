@@ -3,6 +3,8 @@
     <!--    <string name="app_name_version">Flickr Droid\nVersion 2.0</string>-->
     <string name="intro_version_1_10">Hello! Spring is coming and it is time to take off your logo cap! 🙂 \n\nIf you find a bug, please report it in detail to supflickrdroid@gmail.com\n\nAnd if you liked the APP, please support it by rating it.\n\nThank you!</string>
     <string name="intro_version_2_0">Hello!\n\nMeet version 2.0! This version has faster photo loading, redesigned interface, added search filters, fixed bugs and much more! You can find the full list of changes in the \"About\" section.\n\nIf you have any bugs/suggestions please contact me by supflickrdroid@gmail.com\n\nIf you like the app, please support it by rating it on Google Play!\n\nThank you!</string>
+    <string name="intro_version_2_1">Hello!\n\nThis app is still free and ad-free. So please do not rate it with one star if you technical problems.\n\nThis is NOT an official Flickr app. Flickr can revoke permission to access its photo database at any time. So if you have any problems, write to me at supflickrdroid@gmail.com. Respect the developer\'s work!\n\nOn the contrary, I ask you to support the app and rate it in Google Play. This increases my motivation to support the app.\n\nThank you all very much for your feedback!</string>
+
     <string name="intro_header1">Hello!</string>
     <string name="intro_description1">The application supports 2 modes of operation, with and without authorization</string>
     <string name="intro_header2">Authorization</string>
